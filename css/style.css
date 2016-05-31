@@ -17,17 +17,12 @@ body{
 }
 
 .footer{
-    height: 30px;
     width: 100%;
     position: absolute;
     margin: 0;
     bottom: 0;
+    padding: 5px;
     left: 0;
-    background: #00346e;
-    font-size: 14px;
-    color: white;
-    text-align: right;
-    
 }
 
 .navbar-default .navbar-brand {
@@ -193,8 +188,34 @@ background-color: #0051a9;
     background: none;
 }
 
+.carousel{
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    height: 400px; 
+    overflow: hidden;
+}
+
   .carousel-inner > .item > img,
   .carousel-inner > .item > a > img {
-      width: 100%;
+      height: 100%;
       margin: auto;
   }
+
+
+.center-cropped {
+  width: 100%;
+  height: 400px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.sub_item{
+    display: inline-block;
+    text-align: left;
+    color: white;
+    padding: 1em;
+    text-shadow: 2px 1px 6px rgba(0, 0, 0, 1);
+    font-size: 2em;
+    line-height: 1.2em;
+}
