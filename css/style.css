@@ -15,9 +15,21 @@ body{
     background: -moz-linear-gradient(#004795, #00346e); /* For Firefox 3.6 to 15 */
     background: linear-gradient(#004795, #00346e); /* Standard syntax */
 }
-.nav{
-    float:right;
+
+.footer{
+    height: 30px;
+    width: 100%;
+    position: absolute;
+    margin: 0;
+    bottom: 0;
+    left: 0;
+    background: #00346e;
+    font-size: 14px;
+    color: white;
+    text-align: right;
+    
 }
+
 .navbar-default .navbar-brand {
   color: #ecf0f1;
     
@@ -180,3 +192,9 @@ background-color: #0051a9;
     color: #fff;
     background: none;
 }
+
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 100%;
+      margin: auto;
+  }
