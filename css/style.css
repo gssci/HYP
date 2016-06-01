@@ -1,11 +1,11 @@
-h3 {
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-
 body{
     background-color: #eceff7;
 }
+
+.container{
+    margin-top:55px;
+}
+
 .navbar-default {
     font-size: 18px;
     border-width: 0;
@@ -16,9 +16,8 @@ body{
     background: linear-gradient(#004795, #00346e); /* Standard syntax */
 }
 
-.footer{
+footer{
     width: 100%;
-    position: absolute;
     margin: 0;
     bottom: 0;
     padding: 5px;
@@ -189,8 +188,7 @@ background-color: #0051a9;
 }
 
 .carousel{
-    position: absolute;
-    top: 5%;
+    margin-top: 50px;
     width: 100%;
     height: 400px; 
     overflow: hidden;

@@ -2,24 +2,16 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/script.js"></script>
-    
-<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <meta charset="utf-8">    
+    <?php include("includes/head.html");?>
 </head>
 
 <body>
-<? php
-include("includes/navbar.html");
-?>
     
-    <div id="Promotions_Home" class="carousel slide" data-ride="carousel">
+    
+<?php include("includes/navbar.html");?>
+  
+<div id="Promotions_Home" class="carousel slide" data-ride="carousel">
         
   <!-- Indicators MOMENTANEAMENTE NON LI METTIAMO PERCHE' FANNO SCHIFO 
   <ol class="carousel-indicators">
@@ -36,22 +28,23 @@ include("includes/navbar.html");
       <div class="item active center-cropped" style="background-image: url('images/homepage/carousel_1.jpg');">
           <center>
                <div class="sub_item">
-               <h1 style="font-size:1.5em;">Tim Smart Casa</h1>
+               <h1 style="font-size:1.3em;">Tim Smart Casa</h1>
           <p>Internet fino a 20 Mega e chiamate illimitate TIM Vision e Modem Wi-Fi inclusi</p>
-          <button type="button" class="btn btn-primary btn-lg">Scopri</button>
           </div>
            
+           <br />
+          <button type="button" class="btn btn-primary btn-lg">Scopri</button>
           </center>
     </div>
 
       <div class="item center-cropped" style="background-image: url('images/homepage/carousel_2.jpg');">
          <center>
                <div class="sub_item">
-               <h1 style="font-size:1.5em;">Internet Senza Limiti</h1>
+               <h1 style="font-size:1.3em;">Internet Senza Limiti</h1>
           <p>ADSL illimitata e linea di casa - 20,90€ /mese per 24 mesi</p>
-          <button type="button" class="btn btn-primary btn-lg">Scopri</button>
           </div>
-           
+           <br />
+          <button type="button" class="btn btn-primary btn-lg">Scopri</button>
           </center>
     </div>
       
@@ -69,6 +62,29 @@ include("includes/navbar.html");
   </a>
         
 </div>
+    
+   <div class="container text-center" style="margin-top:0;">  
+  <h3>What We Do</h3><br>
+  <div class="row">
+    <div class="col-sm-4">
+      <img src="http://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+      <p>Current Project</p>
+    </div>
+    <div class="col-sm-4"> 
+      <img src="http://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+      <p>Project 2</p>    
+    </div>
+    <div class="col-sm-4">
+      <div class="well">
+       <p>Some text..</p>
+      </div>
+      <div class="well">
+       <p>Some text..</p>
+      </div>
+    </div>
+  </div>
+</div><br>
+
 
 <?php include("includes/footer.html");?>
 </body>
