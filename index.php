@@ -15,47 +15,9 @@
 </head>
 
 <body>
-
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <div class="navbar-header">
-
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-                    aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-                <a class="navbar-brand" href="index.html">
-                    <img alt="Logo" src="images/logo.png" height="20px">
-                </a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Prodotti</a> </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Smart Life Service</a> </li>
-
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Assistenza</a> </li>
-
-
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Contatti</a> </li>
-
-
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Chi Siamo</a> </li>
-                </ul>
-
-            </div>
-        </div>
-
-    </nav>
+<? php
+include("includes/navbar.html");
+?>
     
     <div id="Promotions_Home" class="carousel slide" data-ride="carousel">
         
@@ -108,16 +70,7 @@
         
 </div>
 
-    <footer class="footer text-center center-block">
-                
-                <a href="https://www.facebook.com/bootsnipp"><i class="fa fa-facebook-square fa-2x social"></i></a>
-	            <a href="https://twitter.com/bootsnipp"><i class="fa fa-twitter-square fa-2x social"></i></a>
-	            <a href="https://plus.google.com/+Bootsnipp-page"><i class="fa fa-google-plus-square fa-2x social"></i></a>
-	            <a href="mailto:bootsnipp@gmail.com"><i class="fa fa-envelope-square fa-2x social"></i></a>
-        
-                <p class="txt-railway">Telecom Italia 2012 - P.IVA 00488410010</p>
-        
-    </footer>
+<?php include("includes/footer.html");?>
 </body>
 
 </html>
