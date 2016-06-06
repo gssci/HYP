@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">    
+    <?php include("includes/head.html");?>
+</head>
+
+<body>
+<?php include("includes/navbar.html");?>
+
+<div class="container">
+
+        <div class="panel panel-primary">
+      <div class="panel-heading">Contatta il Servizio Clienti TIM</div>
+      <div class="panel-body">
+          Se desidera assistenza, compili il seguente form. Uno dei nostri operatori la ricontatterà al più presto possibile.
+          
+          <form role="form">
+              
+    <div class="checkbox">
+      <label><input type="checkbox"> Sono già un cliente TIM</label>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" id="nome" placeholder="Nome">
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" id="cognome" placeholder="Cognome">
+    </div>
+              
+                  <div class="form-group">
+      <input type="email" class="form-control" id="email" placeholder="Email">
+    </div>
+              
+                  <div class="form-group">
+      <input type="tel" class="form-control" id="tel" placeholder="Telefono">
+    </div>
+    <div class="form-group">
+  <label for="comment">La sua richiesta:</label>
+  <textarea class="form-control" rows="6" id="richiesta"></textarea>
+</div>
+    <button type="submit" class="btn btn-default">Invia</button>
+  </form>
+            
+            
+            </div>
+    </div>
+    
+        <div class="panel panel-info">
+      <div class="panel-heading">Servizio Clienti telefonico</div>
+      <div class="panel-body">
+187 un numero fatto di persone. Telefona gratuitamente al Servizio Clienti 187 di Telecom Italia, a disposizione 7 giorni su 7, dedicato a risolvere tutte le tue esigenze. Gli operatori sono a tua disposizione per informazioni commerciali e amministrative tutti i giorni, dalle 7.00 alle 22.30. Per ricevere assistenza tecnica sulla linea telefonica o sulla linea ADSL gli operatori sono invece disponibili 24 ore su 24. Il numero è attivo solo se chiami dall’Italia.</div>
+    </div>
+    
+    <div class="panel panel-info">
+      <div class="panel-heading">Dove trovarci</div>
+      <div class="panel-body">
+
+Telecom Italia S.p.a.
+Sede Legale
+via Gaetano Negri, 1
+20123 Milano.
+<br>
+Direzione Generale e Sede Secondaria
+Corso d'Italia 41
+00198 Roma <br>
+Codice Fiscale, Partita Iva, Iscrizione al registro delle Imprese di Milano: 00488410010
+<br> tel. +39 06 36881
+fax +39 06 36882965</div>
+    </div>
+</div>
+
+<?php include("includes/footer.html");?>
+</body>
+
+</html>
