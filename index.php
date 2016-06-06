@@ -64,10 +64,10 @@
 </div>
     
    <div class="container text-center" style="margin-top:0;">  
-  <h3>What We Do</h3><br>
+  <h3>Benvenuti nel nuovo portale di TIM</h3><br>
   <div class="row">
     <div class="col-sm-4">
-      <img src="http://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+      <img src="images/logo-mono.png" class="img-responsive" style="width:100%" alt="Image">
       <p>Current Project</p>
     </div>
     <div class="col-sm-4"> 
@@ -76,7 +76,7 @@
     </div>
     <div class="col-sm-4">
       <div class="well">
-       <p>Some text..</p>
+       <p>Ci siamo finalmente affidati a persone competenti per rifare il sito, enjoy</p>
       </div>
       <div class="well">
        <p>Some text..</p>
