@@ -1,8 +1,6 @@
 <?php
 
-//connection to db
 $mysqli = new mysqli("localhost", "root", "", "hypermedia");
-$mysqli = new mysqli("")
 
 if (mysqli_connect_errno()) { //verify connection
     echo "Error to connect to DBMS: ".mysqli_connect_error(); //notify error
@@ -10,27 +8,36 @@ if (mysqli_connect_errno()) { //verify connection
 }
 
 else {
-    echo "Successful connection"; // connection ok
-}
+    //echo "Successful connection"; // connection ok
 
-function categorie_prodotti(){
-    
-$query = "SELECT nome FROM categorie_prodotti";
-$result = $mysqli -> query($query);
-
-if($result->num_rows >0)
-{
-    $myArray = array();
-    while($row = $result -> fetch_array(MYSQL_ASSOC)){
-        $myArray[] = $row;
+    # extract results mysqli_result::fetch_array
+    $select = $_POST["select"];
+    $table = $_POST["table"];
+    $query = "SELECT $select FROM $table";
+    //query execution
+    $result = $mysqli->query($query);
+    //if there are data available
+    if($result->num_rows >0)
+    {
+        $myArray = array();//create an array
+        while($row = $result->fetch_array(MYSQL_ASSOC)) {
+            $myArray[] = $row;
+        }
+        echo json_encode($myArray);
     }
-    
-    echo json_encode($myArray);
+
+    //free result
+    $result->close();
+
+    //close connection
+    $mysqli->close();
+
+
+
 }
 
-$result -> close();
-$mysqli -> close();
-}
+
+
 
 
 ?>
