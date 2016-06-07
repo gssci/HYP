@@ -37,7 +37,7 @@
           </center>
     </div>
 
-      <div class="item center-cropped" style="background-image: url('images/homepage/carousel_2.jpg');">
+     <div class="item center-cropped" style="background-image: url('images/homepage/carousel_2.jpg');">
          <center>
                <div class="sub_item">
                <h1 style="font-size:1.3em;">Internet Senza Limiti</h1>
@@ -47,6 +47,36 @@
           <button type="button" class="btn btn-primary btn-lg">Scopri</button>
           </center>
     </div>
+      
+     <div class="item active center-cropped" style="background-image: url('images/homepage/carousel_3.jpg');">
+          <center>
+               <div class="sub_item">
+               <h1 style="font-size:1.3em;">TIM Speciale Voce+Dati</h1>
+          <p>Quest'estate raddoppi Giga e Minuti e  hai TIMMusic incluso per 6 mesi</p>
+          </div>
+           
+           <br />
+          <button type="button" class="btn btn-primary btn-lg">Scopri</button>
+          </center>
+    </div>
+      
+      
+      
+          <div class="item active center-cropped" style="background-image: url('images/homepage/carousel_4.jpg');">
+          <center>
+               <div class="sub_item">
+               <h1 style="font-size:1.3em;">TIM Young&Music Full Digital </h1>
+          <p>Parli, navighi, ascolti musica senza consumare GB e hai 3GB in più per l'estate!</p>
+          </div>
+           
+           <br />
+          <button type="button" class="btn btn-primary btn-lg">Scopri</button>
+          </center>
+    </div>
+      
+      
+      
+      
       
   </div>
 

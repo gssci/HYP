@@ -19,13 +19,21 @@
                 <div class="col-sm-2"><img src="images/prodotti/categorie/01_SmartphoneTelefoni_1.png" alt="Smartphone" />
                 <br>Smartphone e Telefoni</div>
                 
-                <div class="col-sm-2"><img src="images/prodotti/categorie/02_TabletComputer.png" alt="Tablet" /></div>
+                <div class="col-sm-2"><img src="images/prodotti/categorie/02_TabletComputer.png" alt="Tablet" />
+                <br>Tablet e Computer</div>
                 
-                <div class="col-sm-2"><img src="images/prodotti/categorie/03_ModemChiavette.png" alt="Modem" /></div>
                 
-                <div class="col-sm-2"><img src="images/prodotti/categorie/04_TVDigitalHome.png" alt="Diital Home" /></div>
+                <div class="col-sm-2"><img src="images/prodotti/categorie/03_ModemChiavette.png" alt="Modem" />
+                <br>Modem e Networking</div>
                 
-                <div class="col-sm-2"><img src="images/prodotti/categorie/05_Outlet_2.png" alt="Outlet" /></div>
+                
+                <div class="col-sm-2"><img src="images/prodotti/categorie/04_TVDigitalHome.png" alt="Diital Home" />
+                <br>TV e Smart Living</div>
+                
+                
+                <div class="col-sm-2"><img src="images/prodotti/categorie/05_Outlet_2.png" alt="Outlet" />
+                <br>Outlet</div>
+                
               </div>
           
           </center>
