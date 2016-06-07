@@ -1,4 +1,7 @@
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
+    $(document).ready(function(){
+    
+        $.ajax({url: "includes/navbar.html", success: function(result){
+            $("body").prepend(result);
+        }});
+    
+});
