@@ -28,6 +28,30 @@ $(document).ready(function () {
                 $(".nome_prodotto").html(nome);
                 $(".prezzo").html(result[0].prezzo);
                 $("#immagine_prodotto").attr("src", result[0].url_immagine);
+                $("#goto_categoria").attr("href", "categoria_prodotti.html?id=" + result[0].categoria);
+                
+            },
+            error: function (request, error) {
+                console.log("Error");
+            }
+        });
+    });
+    
+    $(document).ready(function () {
+        $.ajax({
+            method: "POST",
+            crossDomain: true,
+            url: "php/query_where.php",
+            data: {
+                select: "nome",
+                table: "categorie_prodotti",
+                where: "id='" + categoria + "'"
+            },
+            success: function (response) {
+                console.log(JSON.parse(response));
+                var result = JSON.parse(response);
+                var nome = result[0].nome;
+                $("#goto_categoria").append(nome);
                 
             },
             error: function (request, error) {
