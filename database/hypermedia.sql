@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Creato il: Giu 03, 2016 alle 14:52
+-- Creato il: Giu 08, 2016 alle 18:29
 -- Versione del server: 5.7.11
 -- Versione PHP: 5.6.19
 
@@ -72,7 +72,7 @@ INSERT INTO `assistenza` (`id`, `nome`, `descrizione`, `id_categoria`, `tipo`) V
 --
 
 CREATE TABLE `categorie_assistenza` (
-  `id` int(11) NOT NULL,
+  `id` varchar(100) NOT NULL,
   `nome` varchar(100) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -81,10 +81,10 @@ CREATE TABLE `categorie_assistenza` (
 --
 
 INSERT INTO `categorie_assistenza` (`id`, `nome`) VALUES
-(1, 'Gestione Linea e Servizi'),
-(2, 'Controllo Costi e Pagamenti'),
-(3, 'Supporto Tecnico e Configurazione'),
-(4, 'SmartLife');
+('linea', 'Gestione Linea e Servizi'),
+('costi', 'Controllo Costi e Pagamenti'),
+('supporto', 'Supporto Tecnico e Configurazione'),
+('smartlife', 'SmartLife');
 
 -- --------------------------------------------------------
 
@@ -93,7 +93,7 @@ INSERT INTO `categorie_assistenza` (`id`, `nome`) VALUES
 --
 
 CREATE TABLE `categorie_prodotti` (
-  `id` int(11) NOT NULL,
+  `id` varchar(100) NOT NULL,
   `nome` varchar(100) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -102,11 +102,11 @@ CREATE TABLE `categorie_prodotti` (
 --
 
 INSERT INTO `categorie_prodotti` (`id`, `nome`) VALUES
-(1, 'Smartphone e Telefoni'),
-(2, 'Tablet e Computer'),
-(3, 'Modem e Networking'),
-(4, 'TV e SmartLiving'),
-(5, 'Outlet');
+('smartphone', 'Smartphone e Telefoni'),
+('tablet', 'Tablet e Computer'),
+('modem', 'Modem e Networking'),
+('TV', 'TV e SmartLiving'),
+('outlet', 'Outlet');
 
 -- --------------------------------------------------------
 
@@ -115,7 +115,7 @@ INSERT INTO `categorie_prodotti` (`id`, `nome`) VALUES
 --
 
 CREATE TABLE `categorie_smartlife` (
-  `id` int(11) NOT NULL,
+  `id` varchar(100) NOT NULL,
   `nome` varchar(100) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -124,10 +124,10 @@ CREATE TABLE `categorie_smartlife` (
 --
 
 INSERT INTO `categorie_smartlife` (`id`, `nome`) VALUES
-(1, 'TV e Enterteinement'),
-(2, 'Salute e Benessere'),
-(3, 'Casa e Famiglia'),
-(4, 'Servizi alla Persona');
+('TV', 'TV e Enterteinement'),
+('salute', 'Salute e Benessere'),
+('casa', 'Casa e Famiglia'),
+('persona', 'Servizi alla Persona');
 
 -- --------------------------------------------------------
 
@@ -273,58 +273,59 @@ INSERT INTO `immagini_smartlife` (`id`, `url`, `id_smartlife`) VALUES
 CREATE TABLE `prodotti` (
   `id` int(11) NOT NULL,
   `nome` varchar(100) NOT NULL,
-  `categoria` int(11) NOT NULL,
+  `categoria` varchar(11) NOT NULL,
   `rata` decimal(10,2) NOT NULL,
   `prezzo` decimal(10,2) NOT NULL,
   `produttore` varchar(100) NOT NULL,
-  `in_promozione` tinyint(1) NOT NULL
+  `in_promozione` tinyint(1) NOT NULL,
+  `url_immagine` varchar(100) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dump dei dati per la tabella `prodotti`
 --
 
-INSERT INTO `prodotti` (`id`, `nome`, `categoria`, `rata`, `prezzo`, `produttore`, `in_promozione`) VALUES
-(1, 'Sony XPERIA X', 1, '0.00', '629.90', 'Sony', 0),
-(2, 'LG K8', 1, '0.00', '179.90', 'LG', 0),
-(3, 'Huawei P9', 1, '0.00', '599.90', 'Huawei', 0),
-(4, 'Huawei P9 Plus', 1, '0.00', '749.90', 'Huawei', 0),
-(5, 'Samsung Galaxy J5', 1, '0.00', '229.90', 'Samsung', 1),
-(6, 'iPhone 6s', 1, '0.00', '789.90', 'Apple', 0),
-(7, 'iPhone SE 16 GB', 1, '0.00', '509.90', 'Apple', 0),
-(8, 'ZTE Blade L5', 1, '0.00', '79.90', 'ZTE', 0),
-(9, 'Microsoft Lumia 950', 1, '0.00', '499.90', 'Microsoft', 1),
-(10, 'Samsung Galaxy S6 32 GB', 1, '0.00', '639.90', 'Samsung', 1),
-(11, 'iPad Pro 128 GB', 2, '0.00', '1249.90', 'Apple', 0),
-(12, 'iPad Pro 9.7" 32GB', 2, '0.00', '839.90', 'Apple', 0),
-(13, 'iPad Pro 9.7" 128GB', 2, '0.00', '1199.90', 'Apple', 0),
-(14, 'Samsung Galaxy TAB A 9.7', 2, '0.00', '299.90', 'Samsung', 1),
-(15, 'Huawei MediaPad T1 10 LTE', 2, '0.00', '249.90', 'Huawei', 0),
-(16, 'iPad Mini 4 16GB', 2, '0.00', '529.90', 'Apple', 0),
-(17, 'Samsung Galaxy TAB S2 9.7 LTE', 2, '0.00', '539.90', 'Samsung', 1),
-(18, 'Samsung Galaxy Tab Pro S12', 2, '0.00', '1299.90', 'Samsung', 0),
-(19, 'iPad Mini 3 Wi-Fi', 2, '0.00', '519.90', 'Apple', 0),
-(20, 'Samsung Galaxy Note 10.1 4G LTE', 2, '0.00', '479.00', 'Samsung', 0),
-(21, ' Repeater Wi-Fi ZyXEL AC750', 3, '0.00', '49.90', 'ZyXEL', 0),
-(22, 'FRITZ!WLAN Repeater 1750E', 3, '0.00', '89.90', 'AVM', 0),
-(23, 'TIM Modem Wi-Fi Car Pack 4G', 3, '0.00', '99.90', 'TIM', 0),
-(24, ' Modem ADSL Wi-Fi ', 3, '0.00', '69.00', 'TIM', 0),
-(25, 'Wi-Fi Bridge Technicolor', 3, '0.00', '79.90', 'Technicolor', 0),
-(26, 'Powerline Adapter', 3, '0.00', '49.00', 'TIM', 1),
-(27, 'Tecnoware ERA Plus 900', 3, '0.00', '79.90', 'Tecnoware', 0),
-(28, 'Modem Fibra', 3, '0.00', '99.00', 'TIM', 0),
-(29, 'Repeater ZyXEL N300', 3, '0.00', '39.00', 'ZyXEL', 0),
-(30, 'Modem TIM 4G WI-FI', 3, '0.00', '79.90', 'TIM', 0),
-(31, 'TIMTag', 4, '0.00', '129.00', 'TIM', 0),
-(32, 'D-Link SmartHome Starter Kit', 4, '0.00', '159.90', 'D-Link', 0),
-(33, 'Apple Watch Sport 38', 4, '0.00', '369.90', 'Apple', 0),
-(34, 'Pack TIMvision&Chromecast', 4, '0.00', '39.00', 'TIM', 0),
-(35, 'Cassa Nokia MD 12', 4, '0.00', '49.90', 'Nokia', 0),
-(36, 'Samsung Smart TV 50" + Soundbar con TIMvision', 4, '0.00', '938.88', 'Samsung', 0),
-(37, 'ZTE SPro 2', 4, '0.00', '699.90', 'ZTE', 0),
-(38, 'Samsung Galaxy View 18.4" LTE', 4, '0.00', '799.90', 'Samsung', 0),
-(39, 'WeR@Home', 4, '0.00', '199.00', 'Essence', 0),
-(40, 'Decoder TIMVision', 4, '0.00', '49.00', 'TIM', 0);
+INSERT INTO `prodotti` (`id`, `nome`, `categoria`, `rata`, `prezzo`, `produttore`, `in_promozione`, `url_immagine`) VALUES
+(1, 'Sony XPERIA X', 'smartphone', '0.00', '629.90', 'Sony', 0, 'images/prodotti/smartphone/1.jpg'),
+(2, 'LG K8', 'smartphone', '0.00', '179.90', 'LG', 0, 'images/prodotti/smartphone/2.jpg'),
+(3, 'Huawei P9', 'smartphone', '0.00', '599.90', 'Huawei', 0, 'images/prodotti/smartphone/3.jpg'),
+(4, 'Huawei P9 Plus', 'smartphone', '0.00', '749.90', 'Huawei', 0, 'images/prodotti/smartphone/4.jpg'),
+(5, 'Samsung Galaxy J5', 'smartphone', '0.00', '229.90', 'Samsung', 1, 'images/prodotti/smartphone/5.png'),
+(6, 'iPhone 6s', 'smartphone', '0.00', '789.90', 'Apple', 0, 'images/prodotti/smartphone/6.jpg'),
+(7, 'iPhone SE 16 GB', 'smartphone', '0.00', '509.90', 'Apple', 0, 'images/prodotti/smartphone/7.jpg'),
+(8, 'ZTE Blade L5', 'smartphone', '0.00', '79.90', 'ZTE', 0, 'images/prodotti/smartphone/8.jpg'),
+(9, 'Microsoft Lumia 950', 'smartphone', '0.00', '499.90', 'Microsoft', 1, 'images/prodotti/smartphone/9.jpg'),
+(10, 'Samsung Galaxy S6 32 GB', 'smartphone', '0.00', '639.90', 'Samsung', 1, 'images/prodotti/smartphone/10.jpg'),
+(11, 'iPad Pro 128 GB', 'tablet', '0.00', '1249.90', 'Apple', 0, 'images/prodotti/tablet/11.jpg'),
+(12, 'iPad Pro 9.7" 32GB', 'tablet', '0.00', '839.90', 'Apple', 0, 'images/prodotti/tablet/12.jpg'),
+(13, 'iPad Pro 9.7" 128GB', 'tablet', '0.00', '1199.90', 'Apple', 0, 'images/prodotti/tablet/13.jpg'),
+(14, 'Samsung Galaxy TAB A 9.7', 'tablet', '0.00', '299.90', 'Samsung', 1, 'images/prodotti/tablet/14.jpg'),
+(15, 'Huawei MediaPad T1 10 LTE', 'tablet', '0.00', '249.90', 'Huawei', 0, 'images/prodotti/tablet/15.jpg'),
+(16, 'iPad Mini 4 16GB', 'tablet', '0.00', '529.90', 'Apple', 0, 'images/prodotti/tablet/16.jpg'),
+(17, 'Samsung Galaxy TAB S2 9.7 LTE', 'tablet', '0.00', '539.90', 'Samsung', 1, 'images/prodotti/tablet/17.png'),
+(18, 'Samsung Galaxy Tab Pro S12', 'tablet', '0.00', '1299.90', 'Samsung', 0, 'images/prodotti/tablet/18.jpg'),
+(19, 'iPad Mini 3 Wi-Fi', 'tablet', '0.00', '519.90', 'Apple', 0, 'images/prodotti/tablet/19.jpg'),
+(20, 'Samsung Galaxy Note 10.1 4G LTE', 'tablet', '0.00', '479.00', 'Samsung', 0, 'images/prodotti/tablet/20.png'),
+(21, ' Repeater Wi-Fi ZyXEL AC750', 'modem', '0.00', '49.90', 'ZyXEL', 0, 'images/prodotti/modem/21.jpg'),
+(22, 'FRITZ!WLAN Repeater 1750E', 'modem', '0.00', '89.90', 'AVM', 0, 'images/prodotti/modem/22.jpg'),
+(23, 'TIM Modem Wi-Fi Car Pack 4G', 'modem', '0.00', '99.90', 'TIM', 0, 'images/prodotti/modem/23.jpg'),
+(24, ' Modem ADSL Wi-Fi ', 'modem', '0.00', '69.00', 'TIM', 0, 'images/prodotti/modem/24.jpg'),
+(25, 'Wi-Fi Bridge Technicolor', 'modem', '0.00', '79.90', 'Technicolor', 0, 'images/prodotti/modem/25.jpg'),
+(26, 'Powerline Adapter', 'modem', '0.00', '49.00', 'TIM', 1, 'images/prodotti/modem/26.png'),
+(27, 'Tecnoware ERA Plus 900', 'modem', '0.00', '79.90', 'Tecnoware', 0, 'images/prodotti/modem/27.jpg'),
+(28, 'Modem Fibra', 'modem', '0.00', '99.00', 'TIM', 0, 'images/prodotti/modem/28.jpg'),
+(29, 'Repeater ZyXEL N300', 'modem', '0.00', '39.00', 'ZyXEL', 0, 'images/prodotti/modem/29.jpg'),
+(30, 'Modem TIM 4G WI-FI', 'modem', '0.00', '79.90', 'TIM', 0, 'images/prodotti/modem/30.jpg'),
+(31, 'TIMTag', 'TV', '0.00', '129.00', 'TIM', 0, 'images/prodotti/modem/31.jpg'),
+(32, 'D-Link SmartHome Starter Kit', 'TV', '0.00', '159.90', 'D-Link', 0, 'images/prodotti/TV/32.jpg'),
+(33, 'Apple Watch Sport 38', 'TV', '0.00', '369.90', 'Apple', 0, 'images/prodotti/TV/33.jpg'),
+(34, 'Pack TIMvision&Chromecast', 'TV', '0.00', '39.00', 'TIM', 0, 'images/prodotti/TV/34.jpg'),
+(35, 'Cassa Nokia MD 12', 'TV', '0.00', '49.90', 'Nokia', 0, 'images/prodotti/TV/35.png'),
+(36, 'Samsung Smart TV 50" + Soundbar con TIMvision', 'TV', '0.00', '938.88', 'Samsung', 0, 'images/prodotti/TV/36.jpg'),
+(37, 'ZTE SPro 2', 'TV', '0.00', '699.90', 'ZTE', 0, 'images/prodotti/TV/37.jpg'),
+(38, 'Samsung Galaxy View 18.4" LTE', 'TV', '0.00', '799.90', 'Samsung', 0, 'images/prodotti/TV/38.jpg'),
+(39, 'WeR@Home', 'TV', '0.00', '199.00', 'Essence', 0, 'images/prodotti/TV/39.jpg'),
+(40, 'Decoder TIMVision', 'TV', '0.00', '49.00', 'TIM', 0, 'images/prodotti/TV/40.jpg');
 
 -- --------------------------------------------------------
 
@@ -431,21 +432,6 @@ ALTER TABLE `smartlife`
 --
 ALTER TABLE `assistenza`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
---
--- AUTO_INCREMENT per la tabella `categorie_assistenza`
---
-ALTER TABLE `categorie_assistenza`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
---
--- AUTO_INCREMENT per la tabella `categorie_prodotti`
---
-ALTER TABLE `categorie_prodotti`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT per la tabella `categorie_smartlife`
---
-ALTER TABLE `categorie_smartlife`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT per la tabella `faq`
 --
