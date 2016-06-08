@@ -39,7 +39,7 @@
              var promo = JSON.parse(response);
              var el = "";
              for (var i = 0; i < promo.length; i++) {
-                 el += "<div class='well'><h2>"+promo[i].nome+"</h2></div>";
+                 el += "<div class='well'><h2>"+promo[i].nome+"</h2></br><a href='#' class='btn btn-info' role='button'>Dettagli</a></div>";
              }
 
              $(".container").append(el);
