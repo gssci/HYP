@@ -13,7 +13,8 @@ else {
     # extract results mysqli_result::fetch_array
     $select = $_POST["select"];
     $table = $_POST["table"];
-    $query = "SELECT $select FROM $table";
+    $where = $_POST["where"];
+    $query = "SELECT $select FROM $table WHERE $where";
     //query execution
     $result = $mysqli->query($query);
     //if there are data available
