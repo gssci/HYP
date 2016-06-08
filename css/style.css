@@ -233,6 +233,7 @@ background-color: #0051a9;
 
 .goto {
     color: white;
+    display: inline-block;
     font-size: 20px;
     line-height: 85%;
     font-weight: 300;
@@ -266,4 +267,45 @@ background-color: #0051a9;
 
 .panel-heading > h3, .panel-heading > h4 {
     margin: 0;
+}
+
+#buy {
+    float: right;
+    display: inline-block;
+}
+
+.container > .panel {
+    margin-top: 5px;
+}
+
+h2 {
+    margin: 0;
+    display: inline-block;
+}
+
+.mytoogle{
+    color: white;
+    font-size: 20px;
+    font-weight: 300;
+    width: 100%;
+    padding: 5px;
+    margin-top:10px;
+    margin-bottom: 5px;
+    background: #5bc0de; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#5bc0de, #4ea8c3); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#5bc0de, #4ea8c3); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#5bc0de, #4ea8c3); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#5bc0de, #4ea8c3); /* Standard syntax */
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+.mytoogle:hover{
+    background: #05a9da; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#05a9da, #4ea8c3); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#05a9da, #4ea8c3); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#05a9da, #4ea8c3); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#05a9da, #4ea8c3); /* Standard syntax */
 }

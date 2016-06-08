@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">    
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css" />
@@ -10,20 +10,148 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/pagina_prodotto.js"></script>
+    <title></title>
 </head>
 
 <body>
 
-<div class="container">
-    <a href="prodotti.html">
-        <div class="goto"><h4>Vai alle categorie</h4></div>
-    </a>
-    
-    <a href="prodotti.html">
-        <div class="goto"><h4>Smartphone e telefoni</h4></div>
-    </a>
-</div>
-    
+    <div class="container">
+
+        <a href="prodotti.html" class="btn btn-info" role="button"><span class="glyphicon glyphicon-menu-left"></span> Vai alle categorie</a>
+        <a href="#" class="btn btn-info" role="button"><span class="glyphicon glyphicon-menu-left"></span> Smartphone e telefoni</a>
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h2 class="nome_prodotto"></h2>
+                <button class="btn btn-success" role="button" id="buy" data-toggle="modal" data-target="#buy_form">Acquista</button>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-6 col-sm-6">
+                        <img id="immagine_prodotto" src="" class="img-responsive" style="width:100%" alt="Image">
+                    </div>
+                    <div class="col-xs-6 col-sm-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Descizione</div>
+                            <div class="panel-body">SELECT descrizione FROM prodotti WHERE id='id' </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mytoogle" data-toggle="collapse" data-target="#specifiche">Specifiche Tecniche
+                    <p class="glyphicon glyphicon-plus" style="float:right;"></p>
+                </div>
+
+                <div id="specifiche" class="collapse">
+                    <table class="table table-bordered">
+                        <tr>
+                            <td>SELECT nome FROM specifiche_tecniche WHEN IT'S NOT NULL BECAUSE IT'S OPTIONAL</td>
+                            <td>SELECT valore FROM specifiche_tecniche</td>
+                        </tr>
+                        <tr>
+                            <td>Another row generated in the jQuery</td>
+                            <td>another value</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="mytoogle" data-toggle="collapse" data-target="#servizi">Servizi SmartLife Compatibili
+                    <p class="glyphicon glyphicon-plus" style="float:right;"></p>
+                </div>
+
+                <div id="servizi" class="collapse">
+                    WOW QUANTI SERVIZI
+                </div>
+
+                <div class="mytoogle" data-toggle="collapse" data-target="#assistenza">Specifiche Tecniche
+                    <p class="glyphicon glyphicon-plus" style="float:right;"></p>
+                </div>
+
+                <div id="assistenza" class="collapse">
+                    <h1>AAAAAAAAARRRGHH</h1>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+    <div id="buy_form" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Acquista questo prodotto</h4>
+                </div>
+                <div class="modal-body">
+                    Continua per effettuare il pagamento di <b style="color:red;"><span class="prezzo"></span>€</b> per acquistare: <b class="nome_prodotto"></b>
+                    <br /><br />
+                    <input type="text" class="form-control" placeholder="Nome Completo">
+                    <br />
+                    <input type="text" class="form-control" placeholder="Indirizzo">
+                    <br />
+                    
+                    Dettagli pagamento:
+                    <div class="credit-card-div">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+
+                                <div class="row ">
+                                    <div class="col-md-12">
+                                        <input type="text" class="form-control" placeholder="Numero Carta">
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="row ">
+                                    <div class="col-md-3 col-sm-3 col-xs-3">
+                                        <span class="help-block text-muted small-font">Mese Scadenza</span>
+                                        <input type="text" class="form-control" placeholder="MM">
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 col-xs-3">
+                                        <span class="help-block text-muted small-font">Anno Scadenza</span>
+                                        <input type="text" class="form-control" placeholder="AA">
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 col-xs-3">
+                                        <span class="help-block text-muted small-font">  CCV</span>
+                                        <input type="text" class="form-control" placeholder="CCV">
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 col-xs-3">
+                                        <img src="images/altro/1.png" class="img-rounded">
+                                    </div>
+                                </div>
+                                <br/>
+                                <div class="row ">
+                                    <div class="col-md-12 pad-adjust">
+
+                                        <input type="text" class="form-control" placeholder="Nominativo sulla Carta">
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="row ">
+                                    <div class="col-md-6 col-sm-6 col-xs-6 pad-adjust">
+                                        Form verificato da Dio.
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-6 pad-adjust">
+                                        <input type="submit" class="btn btn-warning btn-block" value="PAGA ORA">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Chiudi</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </body>
 
 </html>

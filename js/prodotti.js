@@ -39,7 +39,7 @@
              var promo = JSON.parse(response);
              var el = "";
              for (var i = 0; i < promo.length; i++) {
-                 el+="<div class='col-sm-4'><div class='well well-sm'><h3>"+promo[i].nome+"</h3><br><img src='"+promo[i].url_immagine+"' class='img-responsive img-thumbnail' style='width:60%' alt='"+promo[i].nome+"'><br><h4>a soli €"+promo[i].prezzo+"</h4><a href=''pagina_prodotto.html?id=" + promo[i].id + "&cat=" + promo[i].categoria + "'' class='btn btn-info' role='button'>Dettagli</a></div></div>";
+                 el+="<div class='col-sm-4'><div class='well well-sm'><h3>"+promo[i].nome+"</h3><br><img src='"+promo[i].url_immagine+"' class='img-responsive img-thumbnail' style='width:60%' alt='"+promo[i].nome+"'><br><h4>a soli €"+promo[i].prezzo+"</h4><a href='pagina_prodotto.html?id=" + promo[i].id + "&cat=" + promo[i].categoria + "'' class='btn btn-info' role='button'>Dettagli</a></div></div>";
              }
 
         $(".container").append(el);
