@@ -51,7 +51,7 @@ var categoria = getUrlVars()["cat"];
                 console.log(JSON.parse(response));
                 var result = JSON.parse(response);
                 var nome = result[0].nome;
-                $("#span_cat").append(nome);
+                $(".goto_categoria").prepend(nome);
                 
             },
             error: function (request, error) {
