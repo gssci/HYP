@@ -1,13 +1,11 @@
  $(document).ready(ready);
 
  function ready() {
-     $.support.cors=true;
-     
      $.ajax({
          method: "POST",
          //dataType: "json", //type of data
          crossDomain: true, //localhost purposes
-         url: "http://polidoriscibetta.altervista.org/php/query.php", //Relative or absolute path to file.php file
+         url: "http://polidoriscibetta.altervista.org/php/query.php" + "?time=" + Date.now(), //Relative or absolute path to file.php file
          data: {
              select: "*",
              table: "categorie_prodotti"
@@ -30,7 +28,7 @@
      $.ajax({
          method: "POST",
          crossDomain: true, 
-         url: "http://polidoriscibetta.altervista.org/php/query_where.php",
+         url: "http://polidoriscibetta.altervista.org/php/query_where.php" + "?time=" + Date.now(),
          data: {
              select: "*",
              table: "prodotti",

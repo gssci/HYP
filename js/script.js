@@ -1,12 +1,9 @@
         $(document).bind("mobileinit", function () {
+            $.support.cors = true;
             $.mobile.allowCrossDomainPages = true;
         });
 
         $(document).ready(function () {
-            $.support.cors = true; //enables cross origin resource sharing.
-
-
-
             $.ajax({
                 url: "includes/navbar.html",
                 success: function (result) {
