@@ -12,7 +12,7 @@ $(document).ready(function () {
     $.ajax({
         method: "POST",
         crossDomain: true,
-        url: "php/query_where.php",
+        url: "http://polidoriscibetta.altervista.org/php/query_where.php",
         data: {
             select: "nome",
             table: "categorie_prodotti",
@@ -32,7 +32,7 @@ $(document).ready(function () {
     $.ajax({
         method: "POST",
         crossDomain: true,
-        url: "php/query_where.php",
+        url: "http://polidoriscibetta.altervista.org/php/query_where.php",
         data: {
             select: "*",
             table: "prodotti",

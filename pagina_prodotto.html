@@ -18,18 +18,21 @@
 
     <div class="container">
 
-        <a href="prodotti.html" class="btn btn-info" role="button"><span class="glyphicon glyphicon-menu-left"></span>Tutti i prodotti</a>
-        <a href="#" class="btn btn-info" role="button" id="goto_categoria"><span class="glyphicon glyphicon-menu-left"></span> Categoria: </a>
+        <a href="prodotti.html" class="btn btn-info" role="button">Tutti i prodotti<span class="glyphicon glyphicon-menu-right"></span></a>
+        <a href="#" class="btn btn-info goto_categoria" role="button"><span id="span_cat">Categoria: </span><span class="glyphicon glyphicon-menu-right"></span></a>
 
         <div class="panel panel-primary">
             <div class="panel-heading">
-                <h2 class="nome_prodotto"></h2>
-                <button class="btn btn-success" role="button" id="buy" data-toggle="modal" data-target="#buy_form">Acquista</button>
+                <div class="row" style="margin-left:3px; margin-right:3px">
+                    <h2 class="nome_prodotto"></h2>
+                    <button class="btn btn-success" role="button" id="buy" data-toggle="modal" data-target="#buy_form">Acquista</button>
+                </div>
+
             </div>
             <div class="panel-body">
                 <div class="row">
                     <div class="col-xs-6 col-sm-6">
-                        <img id="immagine_prodotto" src="" class="img-responsive" style="width:100%" alt="Image">
+                        <img src="" class="img-responsive immagine_prodotto" data-toggle="modal" data-target="#img-modal" style="width:100%" alt="">
                     </div>
                     <div class="col-xs-6 col-sm-6">
                         <div class="panel panel-default">
@@ -78,7 +81,7 @@
 
 
     </div>
-
+    
     <div id="buy_form" class="modal fade" role="dialog">
         <div class="modal-dialog">
 
@@ -90,13 +93,12 @@
                 </div>
                 <div class="modal-body">
                     Continua per effettuare il pagamento di <b style="color:red;"><span class="prezzo"></span>€</b> per acquistare: <b class="nome_prodotto"></b>
-                    <br /><br />
+                    <br />
+                    <br />
                     <input type="text" class="form-control" placeholder="Nome Completo">
                     <br />
                     <input type="text" class="form-control" placeholder="Indirizzo">
-                    <br />
-                    
-                    Dettagli pagamento:
+                    <br /> Dettagli pagamento:
                     <div class="credit-card-div">
                         <div class="panel panel-default">
                             <div class="panel-heading">
@@ -134,7 +136,7 @@
                                 <br />
                                 <div class="row ">
                                     <div class="col-md-6 col-sm-6 col-xs-6 pad-adjust">
-                                        
+
                                     </div>
                                     <div class="col-md-6 col-sm-6 col-xs-6 pad-adjust">
                                         <input type="submit" class="btn btn-warning btn-block" value="PAGA ORA">
@@ -149,6 +151,17 @@
 
         </div>
     </div>
+    
+    <div id="img-modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <img src="" class="img-responsive immagine_prodotto" data-toggle="modal" data-target="#img-modal" style="width:100%" alt="">
+      </div>
+    </div>
+
+  </div>
+</div>
 </body>
 
 </html>

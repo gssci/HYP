@@ -5,7 +5,7 @@
          method: "POST",
          //dataType: "json", //type of data
          crossDomain: true, //localhost purposes
-         url: "php/query.php", //Relative or absolute path to file.php file
+         url: "http://polidoriscibetta.altervista.org/php/query.php", //Relative or absolute path to file.php file
          data: {
              select: "*",
              table: "categorie_prodotti"
@@ -15,7 +15,7 @@
              var cat = JSON.parse(response);
              var el = "";
              for (var i = 0; i < cat.length; i++) {
-                 el += "<div class='col-xs-4 col-sm-4 col-sm-2'><a href='categoria_prodotti.html?id=" + cat[i].id + "'><img src='images/prodotti/categorie/" + cat[i].id + ".png' alt='" + cat[i].nome + "' /><br>" + cat[i].nome + "</div>";
+                 el += "<div class='col-xs-4 col-sm-4 col-sm-2'><a href='categoria_prodotti.html?id=" + cat[i].id + "'><img src='" + cat[i].url_icona + "' alt='" + cat[i].nome + "' /><br>" + cat[i].nome + "</div>";
              }
 
              $("#categorie").html(el);
@@ -28,7 +28,7 @@
      $.ajax({
          method: "POST",
          crossDomain: true, 
-         url: "php/query_where.php", 
+         url: "http://polidoriscibetta.altervista.org/php/query_where.php",
          data: {
              select: "*",
              table: "prodotti",

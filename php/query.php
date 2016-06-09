@@ -1,6 +1,6 @@
 <?php
-
-$mysqli = new mysqli("localhost", "root", "", "hypermedia");
+header('Access-Control-Allow-Origin: *');
+$mysqli = new mysqli("localhost", "polidoriscibetta", "", "my_polidoriscibetta");
 
 if (mysqli_connect_errno()) { //verify connection
     echo "Error to connect to DBMS: ".mysqli_connect_error(); //notify error

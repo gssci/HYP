@@ -309,3 +309,34 @@ h2 {
     background: -moz-linear-gradient(#05a9da, #4ea8c3); /* For Firefox 3.6 to 15 */
     background: linear-gradient(#05a9da, #4ea8c3); /* Standard syntax */
 }
+
+/* responsive text queries */
+@media screen and (max-width: 992px) {
+  p,.btn,input,div,span,h4 {
+    font-size: 98%;
+  }
+  h1 {
+    font-size: 24px;  
+  }
+  h2 {
+    font-size: 22px;  
+  }
+  h3 {
+    font-size: 18px;  
+  }
+}
+
+@media screen and (max-width: 768px) {
+  p,.btn,input,div,span,h4 {
+    font-size: 98%;
+  }
+  h1 {
+    font-size: 20px;  
+  }
+  h2 {
+    font-size: 18px;  
+  }
+  h3 {
+    font-size: 16px;  
+  }
+}

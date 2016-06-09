@@ -9,12 +9,11 @@ function getUrlVars() {
 var id = getUrlVars()["id"];
 var categoria = getUrlVars()["cat"];
 
-$(document).ready(function () {
     $(document).ready(function () {
         $.ajax({
             method: "POST",
             crossDomain: true,
-            url: "php/query_where.php",
+            url: "http://polidoriscibetta.altervista.org/php/query_where.php",
             data: {
                 select: "*",
                 table: "prodotti",
@@ -27,8 +26,9 @@ $(document).ready(function () {
                 $("title").html(nome);
                 $(".nome_prodotto").html(nome);
                 $(".prezzo").html(result[0].prezzo);
-                $("#immagine_prodotto").attr("src", result[0].url_immagine);
-                $("#goto_categoria").attr("href", "categoria_prodotti.html?id=" + result[0].categoria);
+                $(".immagine_prodotto").attr("src", result[0].url_immagine);
+                $(".immagine_prodotto").attr("alt", nome);
+                $(".goto_categoria").attr("href", "categoria_prodotti.html?id=" + result[0].categoria);
                 
             },
             error: function (request, error) {
@@ -41,7 +41,7 @@ $(document).ready(function () {
         $.ajax({
             method: "POST",
             crossDomain: true,
-            url: "php/query_where.php",
+            url: "http://polidoriscibetta.altervista.org/php/query_where.php",
             data: {
                 select: "nome",
                 table: "categorie_prodotti",
@@ -51,7 +51,7 @@ $(document).ready(function () {
                 console.log(JSON.parse(response));
                 var result = JSON.parse(response);
                 var nome = result[0].nome;
-                $("#goto_categoria").append(nome);
+                $("#span_cat").append(nome);
                 
             },
             error: function (request, error) {
@@ -59,4 +59,3 @@ $(document).ready(function () {
             }
         });
     });
-});
