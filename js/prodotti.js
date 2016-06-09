@@ -1,6 +1,7 @@
  $(document).ready(ready);
 
  function ready() {
+     
      $.ajax({
          method: "POST",
          //dataType: "json", //type of data

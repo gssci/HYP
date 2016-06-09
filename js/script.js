@@ -1,5 +1,6 @@
     $(document).ready(function(){
-    
+        $.support.cors=true; //enables cross origin resource sharing.
+        
         $.ajax({url: "includes/navbar.html", success: function(result){
             $("body").prepend(result);
         }});
