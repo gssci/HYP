@@ -16,7 +16,7 @@
     <author>
         Gerlando Savio Scibetta
     </author>
-<access origin="http://polidoriscibetta.altervista.org" />
+<access origin="*" />
 	<platform name="ios" />
 <platform name="android" />
 <platform name="winphone" />
