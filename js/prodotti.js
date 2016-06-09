@@ -2,7 +2,6 @@
 
  function ready() {
      $.support.cors=true;
-     $.mobile.allowCrossDomainPages = true;
      
      $.ajax({
          method: "POST",
