@@ -5,6 +5,8 @@
         versionCode = "10" 
         version     = "1.0.0" >
 <plugin name="cordova-plugin-whitelist" />
+        <access origin="*" />
+        <allow-intent href="*" />
     <!-- versionCode is optional and Android only -->
 
     <name>TIM.it</name>
@@ -16,7 +18,7 @@
     <author>
         Gerlando Savio Scibetta
     </author>
-<access origin="*" />
+
 	<platform name="ios" />
 <platform name="android" />
 <platform name="winphone" />
