@@ -1,9 +1,9 @@
-        $(document).bind("mobileinit", function () {
+        $(document).ready(function () {
+                    $(document).bind("mobileinit", function () {
             $.support.cors = true;
             $.mobile.allowCrossDomainPages = true;
         });
-
-        $(document).ready(function () {
+            
             $.ajax({
                 url: "includes/navbar.html",
                 success: function (result) {
