@@ -25,7 +25,7 @@ var categoria = getUrlVars()["cat"];
                 var nome = result[0].nome;
                 $("title").html(nome);
                 $(".nome_prodotto").html(nome);
-                $(".prezzo").html(result[0].prezzo);
+                $(".prezzo").prepend(result[0].prezzo);
                 $(".immagine_prodotto").attr("src", result[0].url_immagine);
                 $(".immagine_prodotto").attr("alt", nome);
                 $(".goto_categoria").attr("href", "categoria_prodotti.html?id=" + result[0].categoria);
