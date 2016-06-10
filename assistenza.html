@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">    
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css" />
@@ -10,35 +10,33 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/assistenza.js"></script>
+    <title>Assistenza</title>
 </head>
 
 <body>
 
-<div class="container">
-    <div class="panel panel-primary">
-    <div class="panel-heading">Seleziona una categoria di assistenza</div>
-      <div class="panel-body">
-          <center>
-              
-            <div class="row">
-                <div class="col-sm-2"><img src="images/assistenza/categorie/01_Gestione_Linea_e_Servizi.png" alt="Gestione" />
-                <br>Gestione Linea e Servizi</div>
-                
-                <div class="col-sm-2"><img src="images/assistenza/categorie/02_CostiPagamenti_1.png" alt="Costi" />
-                <br>Costi e Pagamenti</div>
-              
-                <div class="col-sm-2"><img src="images/assistenza/categorie/03_Configurazione_0.png" alt="Configurazione" />
-                <br>Supporto Tecnico e Configurazione</div>
-          
-                <div class="col-sm-2"><img src="images/assistenza/categorie/04_ConenutiDigitalLife_0.png" alt="Digital Home" />
-                <br>Contenuti Digital Life</div>
-             
-              </div>
-          
-          </center>
+    <div class="container">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Seleziona una categoria di assistenza</div>
+            <div class="panel-body">
+                <center>
+
+                    <div class="row" id="categorie">
+
+                    </div>
+
+                </center>
+            </div>
+        </div>
+
+        <div class="panel panel-success">
+            <div class="panel-heading">In evidenza</div>
+            <div class="panel-body" id="in_evidenza">
+
+            </div>
         </div>
     </div>
-</div>
 
 </body>
 

@@ -13,7 +13,7 @@ $(document).ready(function () {
             var icone = "";
             var banners = "";
             for (var i = 0; i < cat.length; i++) {
-                icone += "<div class='col-xs-4 col-sm-4 col-sm-2'><a href='categoria_servizi.html?id=" + cat[i].id + "'><img src='" + cat[i].url_icona + "' alt='" + cat[i].nome + "' /><br>" + cat[i].nome + "</div>";
+                icone += "<div class='col-xs-4 col-sm-2'><a href='categoria_servizi.html?id=" + cat[i].id + "'><img src='" + cat[i].url_icona + "' alt='" + cat[i].nome + "' /><br>" + cat[i].nome + "</div>";
                 
                 banners += "<div id='banner_"+i+"' class='banner-cropped img-banner cn'><div class='inner col-xs-10 col-sm-4'><h2 class='white-title'>"+cat[i].nome+"</h2><p>"+cat[i].sottotitolo+"</p><a href='categoria_servizi.html?id=" + cat[i].id + "' class='btn btn-default' role='button'>Scopri</a></div></div>";
             }
