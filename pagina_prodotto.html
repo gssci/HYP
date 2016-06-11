@@ -11,7 +11,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>
     <script src="js/pagina_prodotto.js"></script>
-    
+
     <title></title>
 </head>
 
@@ -43,7 +43,8 @@
                     </div>
                     <div class="col-xs-6 col-sm-6">
                         <div class="panel panel-default">
-                            <div class="panel-heading" style="text-align:center;"><h2 class="prezzo">€</h2></div>
+                            <div class="panel-heading" style="text-align:center;">
+                                <h2 class="prezzo">€</h2></div>
                         </div>
                     </div>
                 </div>
@@ -52,16 +53,11 @@
                 </div>
 
                 <div id="specifiche" class="collapse">
-                    <table class="table table-bordered">
-                        <tr>
-                            <td>SELECT nome FROM specifiche_tecniche WHEN IT'S NOT NULL BECAUSE IT'S OPTIONAL</td>
-                            <td>SELECT valore FROM specifiche_tecniche</td>
-                        </tr>
-                        <tr>
-                            <td>Another row generated in the jQuery</td>
-                            <td>another value</td>
-                        </tr>
-                    </table>
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="tabella-specifiche">
+                        </table>
+                    </div>
+
                 </div>
 
                 <div class="mytoogle" data-toggle="collapse" data-target="#servizi">Servizi SmartLife Compatibili
@@ -87,7 +83,7 @@
 
 
     </div>
-    
+
     <div id="buy_form" class="modal fade" role="dialog">
         <div class="modal-dialog">
 
@@ -157,17 +153,17 @@
 
         </div>
     </div>
-    
-    <div id="img-modal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-body">
-        <img src="" class="img-responsive immagine_prodotto" data-toggle="modal" data-target="#img-modal" style="width:100%" alt="">
-      </div>
-    </div>
 
-  </div>
-</div>
+    <div id="img-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="" class="img-responsive immagine_prodotto" data-toggle="modal" data-target="#img-modal" style="width:100%" alt="">
+                </div>
+            </div>
+
+        </div>
+    </div>
 </body>
 
 </html>

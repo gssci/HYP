@@ -8,6 +8,8 @@ if (mysqli_connect_errno()) { //verify connection
 }
 
 else {
+    
+    mysqli_set_charset($mysqli,"utf8");
     //echo "Successful connection"; // connection ok
 
     # extract results mysqli_result::fetch_array
@@ -22,7 +24,8 @@ else {
     {
         $myArray = array();//create an array
         while($row = $result->fetch_array(MYSQL_ASSOC)) {
-            $myArray[] = $row;
+            $rowbr = array_map("nl2br", $row);
+            $myArray[] = $rowbr;
         }
         echo json_encode($myArray);
     }
