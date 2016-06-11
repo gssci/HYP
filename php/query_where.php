@@ -17,6 +17,7 @@ else {
     $table = $_POST["table"];
     $where = $_POST["where"];
     $query = "SELECT $select FROM $table WHERE $where";
+    $query = mysqli_real_escape_string($query);
     //query execution
     $result = $mysqli->query($query);
     //if there are data available

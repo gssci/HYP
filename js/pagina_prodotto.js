@@ -29,7 +29,7 @@ $(document).ready(function () {
             $(".immagine_prodotto").attr("src", result[0].url_immagine);
             $(".immagine_prodotto").attr("alt", nome);
             $(".goto_categoria").attr("href", "categoria_prodotti.html?id=" + result[0].categoria);
-
+            $("#descrizione").append(result[0].descrizione);
         },
         error: function (request, error) {
             console.log("Error");

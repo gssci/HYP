@@ -19,7 +19,7 @@
 
     <div class="container">
 
-        <a href="prodotti.html" class="btn btn-info" role="button">Tutti i prodotti<span class="glyphicon glyphicon-menu-right"></span></a>
+        <a href="prodotti.html" class="btn btn-info" role="button">Prodotti<span class="glyphicon glyphicon-menu-right"></span></a>
         <a href="#" class="btn btn-info goto_categoria" role="button"><span class="glyphicon glyphicon-menu-right"></span></a>
 
         <div class="panel panel-primary">
@@ -32,53 +32,61 @@
             </div>
             <div class="panel-body">
                 <div class="row">
-                    <div class="col-xs-6 col-sm-6">
+                    <div class="col-sm-6">
                         <img src="" class="img-responsive immagine_prodotto" data-toggle="modal" data-target="#img-modal" style="width:100%" alt="">
                     </div>
-                    <div class="col-xs-6 col-sm-6">
+                    <div class="col-sm-6">
                         <div class="panel panel-default">
-                            <div class="panel-heading">Descizione</div>
-                            <div class="panel-body">SELECT descrizione FROM prodotti WHERE id='id' </div>
+                            <div class="panel-body" id="descrizione"></div>
                         </div>
                     </div>
-                    <div class="col-xs-6 col-sm-6">
+
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <span>.</span>
+                    </div>
+                    <div class="col-sm-6">
                         <div class="panel panel-default">
                             <div class="panel-heading" style="text-align:center;">
                                 <h2 class="prezzo">€</h2></div>
                         </div>
                     </div>
                 </div>
-                <div class="mytoogle" data-toggle="collapse" data-target="#specifiche">Specifiche Tecniche
-                    <p class="glyphicon glyphicon-plus" style="float:right;"></p>
+            
+
+            <div class="mytoogle" data-toggle="collapse" data-target="#specifiche">Specifiche Tecniche
+                <p class="glyphicon glyphicon-plus" style="float:right;"></p>
+            </div>
+
+            <div id="specifiche" class="collapse">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="tabella-specifiche">
+                    </table>
                 </div>
 
-                <div id="specifiche" class="collapse">
-                    <div class="table-responsive">
-                        <table class="table table-bordered" id="tabella-specifiche">
-                        </table>
-                    </div>
+            </div>
 
-                </div>
+            <div class="mytoogle" data-toggle="collapse" data-target="#servizi">Servizi SmartLife Compatibili
+                <p class="glyphicon glyphicon-plus" style="float:right;"></p>
+            </div>
 
-                <div class="mytoogle" data-toggle="collapse" data-target="#servizi">Servizi SmartLife Compatibili
-                    <p class="glyphicon glyphicon-plus" style="float:right;"></p>
-                </div>
+            <div id="servizi" class="collapse">
+                WOW QUANTI SERVIZI
+            </div>
 
-                <div id="servizi" class="collapse">
-                    WOW QUANTI SERVIZI
-                </div>
+            <div class="mytoogle" data-toggle="collapse" data-target="#assistenza">Assistenza
+                <p class="glyphicon glyphicon-plus" style="float:right;"></p>
+            </div>
 
-                <div class="mytoogle" data-toggle="collapse" data-target="#assistenza">Assistenza
-                    <p class="glyphicon glyphicon-plus" style="float:right;"></p>
-                </div>
-
-                <div id="assistenza" class="collapse">
-                    <h1>AAAAAAAAARRRGHH</h1>
-                </div>
+            <div id="assistenza" class="collapse">
+                <h1>AAAAAAAAARRRGHH</h1>
+            </div>
+        </div>
             </div>
 
 
-        </div>
+    </div>
 
 
 
