@@ -45,7 +45,7 @@ $(document).ready(function () {
             var result = JSON.parse(response);
             var el = "";
 for (var i = 0; i < result.length; i++) {
-                el += "<div class='col-sm-4'><div class='well well-sm'><h3>" + result[i].nome + "</h3><br><h5>" + result[i].sottotitolo + "</h5><br><img src='" + result[i].thumbnail + "' class='img-responsive img-thumbnail' alt='" + result[i].nome + "'><br><br><a href='pagina_prodotto.html?id=" + result[i].id + "&cat=" + result[i].id_categoria + "' class='btn btn-warning btn-lg' role='button'>Scopri</a></div></div>";
+                el += "<div class='col-sm-4'><div class='well well-sm'><h3>" + result[i].nome + "</h3><br><h5>" + result[i].sottotitolo + "</h5><br><img src='" + result[i].thumbnail + "' class='img-responsive img-thumbnail' alt='" + result[i].nome + "'><br><br><a href='pagina_smartlife.html?id=" + result[i].id + "&cat=" + result[i].id_categoria + "' class='btn btn-warning btn-lg' role='button'>Scopri</a></div></div>";
             }
 
             $("#lista-servizi").append(el);
