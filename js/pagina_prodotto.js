@@ -75,7 +75,7 @@ $(document).ready(function () {
                 var value = result[0][name];
                 if (value != "" && name != "id_prodotto") {
                     var name2 = name.replace(/_/g, ' ');
-                    righe += "<tr><td><b>"+name2.charAt(0).toUpperCase() + name2.slice(1) +"</b></td><td>"+value+"</td></tr>";
+                    righe += "<tr><td><b>" + name2.charAt(0).toUpperCase() + name2.slice(1) + "</b></td><td>" + value + "</td></tr>";
                 }
 
             }
@@ -89,7 +89,52 @@ $(document).ready(function () {
     });
 
 
+//Smartlife compatibili
+        $.ajax({
+        method: "POST",
+        crossDomain: true,
+        url: "http://polidoriscibetta.altervista.org/php/query_where.php",
+        data: {
+            select: "id_smartlife",
+            table: "prodotti_smartlife",
+            where: "id_prodotto='" + id + "'"
+        },
+        success: function (response) {
+            console.log(JSON.parse(response));
+            var id_servizi = JSON.parse(response);
+            var servizi = "";
+            for (var i = 0; i < id_servizi.length; i++) {
+                $.ajax({
+                    method: "POST",
+                    crossDomain: true,
+                    url: "http://polidoriscibetta.altervista.org/php/query_where.php",
+                    data: {
+                        select: "*",
+                        table: "smartlife",
+                        where: "id='" + id_servizi[i].id_smartlife + "'"
+                    },
+                    success: function (response) {
+                        console.log(JSON.parse(response));
+                        var result = JSON.parse(response);
+                        var el = "";
+                        for (var j = 0; j < result.length; j++) {
+                            el += "<div class='col-sm-4'><div class='well well-sm'><h3>" + result[j].nome + "</h3><br><h5>" + result[j].sottotitolo + "</h5><br><img src='" + result[j].thumbnail + "' class='img-responsive img-thumbnail' alt='" + result[j].nome + "'><br><br><a href='pagina_smartlife.html?id=" + result[j].id + "&cat=" + result[j].id_categoria + "' class='btn btn-warning btn-lg' role='button'>Scopri</a></div></div>";
+                        }
 
+                        $("#servizi_sl").append(el);
+                    },
+                    error: function (request, error) {
+                        console.log("Error");
+                    }
+                });
+            }
+
+
+        },
+        error: function (request, error) {
+            console.log("Error");
+        }
+    });
 
 });
 
@@ -97,4 +142,8 @@ $(document).ready(function () {
 $(document).on('click', '.mytoogle', function () {
     $(this).find("p").toggleClass("glyphicon-plus");
     $(this).find("p").toggleClass("glyphicon-minus");
+});
+
+$(document).on('click', '#toogle_servizi', function () {
+
 });
