@@ -118,10 +118,10 @@ $(document).ready(function () {
                         var result = JSON.parse(response);
                         var el = "";
                         for (var j = 0; j < result.length; j++) {
-                            el += "<div class='col-sm-4'><div class='well well-sm'><h3>" + result[j].nome + "</h3><br><h5>" + result[j].sottotitolo + "</h5><br><img src='" + result[j].thumbnail + "' class='img-responsive img-thumbnail' alt='" + result[j].nome + "'><br><br><a href='pagina_smartlife.html?id=" + result[j].id + "&cat=" + result[j].id_categoria + "' class='btn btn-warning btn-lg' role='button'>Scopri</a></div></div>";
+                            el += "<div class='col-sm-4'><div class='well well-sm'><h3>" + result[j].nome + "</h3><br><h5>" + result[j].sottotitolo + "</h5><br><img src='" + result[j].thumbnail + "' class='img-responsive img-thumbnail' alt='" + result[j].nome + "'><br><br><a href='pagina_smartlife.html?id=" + result[j].id + "&cat=" + result[j].id_categoria + "' class='btn btn-warning' role='button'>Scopri</a></div></div>";
                         }
 
-                        $("#servizi_sl").append(el);
+                        $("#servizi").find(".row").append(el);
                     },
                     error: function (request, error) {
                         console.log("Error");
@@ -135,6 +135,56 @@ $(document).ready(function () {
             console.log("Error");
         }
     });
+    
+    
+//Assistenza compatibili
+        $.ajax({
+        method: "POST",
+        crossDomain: true,
+        url: "http://polidoriscibetta.altervista.org/php/query_where.php",
+        data: {
+            select: "id_assistenza",
+            table: "prodotti_assistenza",
+            where: "id_prodotto='" + id + "'"
+        },
+        success: function (response) {
+            console.log(JSON.parse(response));
+            var id_assistenza = JSON.parse(response);
+            var assistenza = "";
+            for (var i = 0; i < id_assistenza.length; i++) {
+                $.ajax({
+                    method: "POST",
+                    crossDomain: true,
+                    url: "http://polidoriscibetta.altervista.org/php/query_where.php",
+                    data: {
+                        select: "nome,tipo,id,id_categoria",
+                        table: "assistenza",
+                        where: "id='" + id_assistenza[i].id_assistenza + "'"
+                    },
+                    success: function (response) {
+                        console.log(JSON.parse(response));
+                        var ass = JSON.parse(response);
+                        var el = "";
+                        for (var j = 0; j < ass.length; j++) {
+                            el += "<div class='col-sm-4'><a class='link_assistenza " + ass[j].tipo.replace(/\s+/g, '') + "' href='pagina_assistenza.html?id=" + ass[j].id + "&cat=" + ass[j].id_categoria + "'><div class='myWell'><p class='evidenza'>" + ass[j].nome + "</p></div></a></div>";
+                        }
+
+                        $("#assistenza").find(".row").append(el);
+                    },
+                    error: function (request, error) {
+                        console.log("Error");
+                    }
+                });
+            }
+
+
+        },
+        error: function (request, error) {
+            console.log("Error");
+        }
+    });
+    
+   
 
 });
 
@@ -144,6 +194,3 @@ $(document).on('click', '.mytoogle', function () {
     $(this).find("p").toggleClass("glyphicon-minus");
 });
 
-$(document).on('click', '#toogle_servizi', function () {
-
-});
