@@ -69,11 +69,17 @@ $(document).ready(function () {
             console.log(JSON.parse(response));
             var result = JSON.parse(response);
             var buttons = "";
-            for (var i = 0; i < result.length; i++) {
+            if(result.length>1){
+                for (var i = 0; i < result.length; i++) {
                 buttons += "<button type='button' class='btn btn-success btn-xs' style='margin:2px;'>" + result[i].tipo + "</button>"
             }
 
             $("#btns-filtro").append(buttons);
+            }
+            else{
+                $("#btns-filtro").hide();
+            }
+            
         },
         error: function (request, error) {
             console.log("Error");

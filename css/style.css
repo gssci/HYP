@@ -20,8 +20,22 @@ footer {
 .container {
     margin-top: 55px;
 }
+.no-padding{
+    padding-top: 0;
+}
 .icone{
     padding: 10px;
+}
+.filtro-header{
+    margin: 0;
+}
+.row-inner{
+    margin-left: 3px;
+    margin-right: 3px;
+}
+.row-inner > h4 {
+    margin: 3px;
+    display: inline-block;
 }
 .navbar-default {
     font-size: 18px;
@@ -237,6 +251,7 @@ h2 {
 }
 h3 {
     margin: 0;
+    display: inline-block;
 }
 .mytoogle {
     color: white;
@@ -290,19 +305,19 @@ h3 {
 }
 
 .mytoogle-green{
-    background: #05a9da;
-    background: -webkit-linear-gradient(#05a9da, #4ea8c3);
-    background: -o-linear-gradient(#05a9da, #4ea8c3);
-    background: -moz-linear-gradient(#05a9da, #4ea8c3);
-    background: linear-gradient(#05a9da, #4ea8c3);
+    background: #80b680;
+    background: -webkit-linear-gradient(#80b680, #5cb85c);
+    background: -o-linear-gradient(#80b680, #5cb85c);
+    background: -moz-linear-gradient(#80b680, #5cb85c);
+    background: linear-gradient(#80b680, #5cb85c);
 }
 
 .mytoogle-green:hover{
-    background: #05a9da;
-    background: -webkit-linear-gradient(#05a9da, #4ea8c3);
-    background: -o-linear-gradient(#05a9da, #4ea8c3);
-    background: -moz-linear-gradient(#05a9da, #4ea8c3);
-    background: linear-gradient(#05a9da, #4ea8c3);
+    background: #2bb52b;
+    background: -webkit-linear-gradient(#2bb52b, #5cb85c);
+    background: -o-linear-gradient(#2bb52b, #5cb85c);
+    background: -moz-linear-gradient(#2bb52b, #5cb85c);
+    background: linear-gradient(#2bb52b, #5cb85c);
 }
 
 /* responsive text queries */
