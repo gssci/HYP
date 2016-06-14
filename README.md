@@ -1,2 +1,5 @@
 # Hypermedia Applications
-##### Franca Garzotto - a.a. 2015/2016
+
+gruppo: Lucia Polidori, Gerlando Savio Scibetta
+
+
