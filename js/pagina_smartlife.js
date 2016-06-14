@@ -14,7 +14,7 @@ $(document).ready(function () {
     $.ajax({
         method: "POST",
         crossDomain: true,
-        url: "http://polidoriscibetta.altervista.org/php/query_where.php",
+        url: "http://polidoriscibetta.altervista.org/php/query.php",
         data: {
             select: "*",
             table: "smartlife",
@@ -37,7 +37,7 @@ $(document).ready(function () {
             $.ajax({
             method: "POST",
             crossDomain: true,
-            url: "http://polidoriscibetta.altervista.org/php/query_where.php",
+            url: "http://polidoriscibetta.altervista.org/php/query.php",
             data: {
                 select: "nome",
                 table: "categorie_smartlife",

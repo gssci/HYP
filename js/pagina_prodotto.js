@@ -13,7 +13,7 @@ $(document).ready(function () {
     $.ajax({
         method: "POST",
         crossDomain: true,
-        url: "http://polidoriscibetta.altervista.org/php/query_where.php",
+        url: "http://polidoriscibetta.altervista.org/php/query.php",
         data: {
             select: "*",
             table: "prodotti",
@@ -39,7 +39,7 @@ $(document).ready(function () {
     $.ajax({
         method: "POST",
         crossDomain: true,
-        url: "http://polidoriscibetta.altervista.org/php/query_where.php",
+        url: "http://polidoriscibetta.altervista.org/php/query.php",
         data: {
             select: "nome",
             table: "categorie_prodotti",
@@ -61,7 +61,7 @@ $(document).ready(function () {
     $.ajax({
         method: "POST",
         crossDomain: true,
-        url: "http://polidoriscibetta.altervista.org/php/query_where.php",
+        url: "http://polidoriscibetta.altervista.org/php/query.php",
         data: {
             select: "*",
             table: "specifiche_tecniche",
@@ -93,7 +93,7 @@ $(document).ready(function () {
         $.ajax({
         method: "POST",
         crossDomain: true,
-        url: "http://polidoriscibetta.altervista.org/php/query_where.php",
+        url: "http://polidoriscibetta.altervista.org/php/query.php",
         data: {
             select: "id_smartlife",
             table: "prodotti_smartlife",
@@ -107,7 +107,7 @@ $(document).ready(function () {
                 $.ajax({
                     method: "POST",
                     crossDomain: true,
-                    url: "http://polidoriscibetta.altervista.org/php/query_where.php",
+                    url: "http://polidoriscibetta.altervista.org/php/query.php",
                     data: {
                         select: "*",
                         table: "smartlife",
@@ -118,10 +118,10 @@ $(document).ready(function () {
                         var result = JSON.parse(response);
                         var el = "";
                         for (var j = 0; j < result.length; j++) {
-                            el += "<div class='col-sm-4'><div class='well well-sm'><h3>" + result[j].nome + "</h3><br><h5>" + result[j].sottotitolo + "</h5><br><img src='" + result[j].thumbnail + "' class='img-responsive img-thumbnail' alt='" + result[j].nome + "'><br><br><a href='pagina_smartlife.html?id=" + result[j].id + "&cat=" + result[j].id_categoria + "' class='btn btn-warning' role='button'>Scopri</a></div></div>";
+                            el += "<td><div class='well well-sm' style='height:325px; width:300px;'><h3>" + result[j].nome + "</h3><br><h5>" + result[j].sottotitolo + "</h5><br><a href='pagina_smartlife.html?id=" + result[j].id + "&cat=" + result[j].id_categoria + "'><img src='" + result[j].thumbnail + "' class='img-responsive img-thumbnail' alt='" + result[j].nome + "'></a></div></td>";
                         }
 
-                        $("#servizi").find(".row").append(el);
+                        $("#servizi").find("tr").append(el);
                     },
                     error: function (request, error) {
                         console.log("Error");
@@ -141,7 +141,7 @@ $(document).ready(function () {
         $.ajax({
         method: "POST",
         crossDomain: true,
-        url: "http://polidoriscibetta.altervista.org/php/query_where.php",
+        url: "http://polidoriscibetta.altervista.org/php/query.php",
         data: {
             select: "id_assistenza",
             table: "prodotti_assistenza",
@@ -155,7 +155,7 @@ $(document).ready(function () {
                 $.ajax({
                     method: "POST",
                     crossDomain: true,
-                    url: "http://polidoriscibetta.altervista.org/php/query_where.php",
+                    url: "http://polidoriscibetta.altervista.org/php/query.php",
                     data: {
                         select: "nome,tipo,id,id_categoria",
                         table: "assistenza",

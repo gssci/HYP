@@ -6,7 +6,8 @@ $(document).ready(function () {
         url: "http://polidoriscibetta.altervista.org/php/query.php" + "?time=" + Date.now(), //Relative or absolute path to file.php file
         data: {
             select: "*",
-            table: "categorie_prodotti"
+            table: "categorie_prodotti",
+            where: "1"
         },
         success: function (response) {
             console.log(JSON.parse(response));
@@ -26,7 +27,7 @@ $(document).ready(function () {
     $.ajax({
         method: "POST",
         crossDomain: true,
-        url: "http://polidoriscibetta.altervista.org/php/query_where.php" + "?time=" + Date.now(),
+        url: "http://polidoriscibetta.altervista.org/php/query.php" + "?time=" + Date.now(),
         data: {
             select: "*",
             table: "prodotti",

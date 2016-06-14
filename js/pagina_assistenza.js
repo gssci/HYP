@@ -13,7 +13,7 @@ var categoria = getUrlVars()["cat"];
         $.ajax({
             method: "POST",
             crossDomain: true,
-            url: "http://polidoriscibetta.altervista.org/php/query_where.php",
+            url: "http://polidoriscibetta.altervista.org/php/query.php",
             data: {
                 select: "*",
                 table: "assistenza",
@@ -38,7 +38,7 @@ var categoria = getUrlVars()["cat"];
         $.ajax({
             method: "POST",
             crossDomain: true,
-            url: "http://polidoriscibetta.altervista.org/php/query_where.php",
+            url: "http://polidoriscibetta.altervista.org/php/query.php",
             data: {
                 select: "nome",
                 table: "categorie_assistenza",
@@ -59,7 +59,7 @@ var categoria = getUrlVars()["cat"];
       $.ajax({
             method: "POST",
             crossDomain: true,
-            url: "http://polidoriscibetta.altervista.org/php/query_where.php",
+            url: "http://polidoriscibetta.altervista.org/php/query.php",
             data: {
                 select: "*",
                 table: "assistenza JOIN faq",

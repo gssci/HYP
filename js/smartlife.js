@@ -5,7 +5,8 @@ $(document).ready(function () {
         url: "http://polidoriscibetta.altervista.org/php/query.php", 
         data: {
             select: "*",
-            table: "categorie_smartlife"
+            table: "categorie_smartlife",
+            where: "1"
         },
         success: function (response) {
             console.log(JSON.parse(response));
