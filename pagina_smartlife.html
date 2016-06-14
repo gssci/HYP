@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">    
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css" />
@@ -16,19 +16,107 @@
 
 <body>
 
-<div class="container">
-     <a href="smartlife.html" class="btn btn-warning" role="button">Smartlife<span class="glyphicon glyphicon-menu-right"></span></a>
-     <a href="#" class="btn btn-warning goto_categoria" role="button"><span class="glyphicon glyphicon-menu-right"></span></a>
-       <div class="panel panel-warning">
+    <div class="container">
+        <a href="smartlife.html" class="btn btn-warning" role="button">Smartlife<span class="glyphicon glyphicon-menu-right"></span></a>
+        <a href="#" class="btn btn-warning goto_categoria" role="button"><span class="glyphicon glyphicon-menu-right"></span></a>
+        <div class="panel panel-warning">
             <div class="panel-heading">
-                <h2 class="nome"></h2>
-           </div>
-            <div class="panel-body">
-                Ricominciamo
+                <div class="row" style="margin-left:3px; margin-right:3px">
+                    <h2 class="nome"></h2>
+                    <button class="btn btn-success head-button" role="button" id="subscribe" data-toggle="modal" data-target="#subscription_form">Attiva</button>
+                </div>
+
+            </div>
+            <div class="panel-body" id="sl-body">
+                
+                    <p class="sub_item" id="descrizione"></p>
+                
+                <div class="mytoogle mytoogle-orange" data-toggle="collapse" data-target="#regole">Regole e Attivazione
+                <p class="glyphicon glyphicon-minus" style="float:right;"></p>
+            </div>
+
+            <div id="regole" class="collapse in">
+                <div class="panel panel-default">
+                    <div class="panel-body" id="regolamento"></div>
+                    <div class="panel panel-default">
+                            <div class="panel-heading text-center">
+                                <h4>Non hai trovato quello che cercavi? <a href="contatti.html">Contattaci</a></h4></div>
+                </div>
+                    
+                
+
+            </div>
+
+            
+                
+            </div>
+                <div class="mytoogle mytoogle-orange" data-toggle="collapse" data-target="#prodotti" id="toogle_servizi">Prodotti compatibli
+                <p class="glyphicon glyphicon-minus" style="float:right;"></p>
+            </div>
+
+            <div id="prodotti" class="collapse in">
+                <div class="table-responsive"><table class="table-condensed">
+                    <tr></tr>
+                    </table></div>
             </div>
         </div>
-</div>
-    
+
+
+        <div id="subscription_form" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Attiva questo servizio</h4>
+                    </div>
+                    <div class="modal-body">
+                        Continua per effettuare l'attivazione di <b class="nome"></b>
+                        <br />
+                        <br />
+                        Se sei già cliente TIM inserisci i tuoi dati:
+                        <input type="text" class="form-control" placeholder="Numero cliente">
+                        <br />
+                        <input type="text" class="form-control" placeholder="Nome completo">
+                        <br /> oppure Registrati:
+                        <div class="credit-card-div">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+
+                                    <div class="row ">
+                                        <div class="col-md-12">
+                                            <input type="email" class="form-control" placeholder="Indizzo email">
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row ">
+                                        <div class="col-md-12 pad-adjust">
+                                            <input type="text" class="form-control" placeholder="Numero di telefono TIM">
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row ">
+                                        <div class="col-md-8 col-sm-8 col-xs-8 pad-adjust">
+
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-4 pad-adjust">
+                                            <input type="submit" class="btn btn-info btn-block btn-xs" value="Registrati">
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal">Attiva</button>
+      </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

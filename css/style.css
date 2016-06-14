@@ -124,6 +124,11 @@ footer {
     background-size: 200%;
     background-repeat: no-repeat;
 }
+#sl-body{
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: 100%, cover;
+}
 .img-banner {
     width: 100%;
     margin-top: 20px;
@@ -214,7 +219,8 @@ footer {
 .panel-heading > h4 {
     margin: 0;
 }
-#buy {
+
+.head-button {
     float: right;
     display: inline-block;
 }
@@ -246,7 +252,6 @@ h3 {
     /* For Firefox 3.6 to 15 */
     background: linear-gradient(#5bc0de, #4ea8c3);
     /* Standard syntax */
-    border: 1px solid #e3e3e3;
     border-radius: 4px;
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
@@ -262,6 +267,38 @@ h3 {
     /* For Firefox 3.6 to 15 */
     background: linear-gradient(#05a9da, #4ea8c3);
     /* Standard syntax */
+}
+
+.mytoogle-orange{
+    background: #f0ae51;
+    background: -webkit-linear-gradient(#f0ae51, #e6931e);
+    background: -o-linear-gradient(#f0ae51, #e6931e);
+    background: -moz-linear-gradient(#f0ae51, #e6931e);
+    background: linear-gradient(#f0ae51, #e6931e);
+}
+
+.mytoogle-orange:hover{
+    background: #f89c19;
+    background: -webkit-linear-gradient(#f89c19, #e6931e);
+    background: -o-linear-gradient(#f89c19, #e6931e);
+    background: -moz-linear-gradient(#f89c19, #e6931e);
+    background: linear-gradient(#f89c19, #e6931e);
+}
+
+.mytoogle-green{
+    background: #05a9da;
+    background: -webkit-linear-gradient(#05a9da, #4ea8c3);
+    background: -o-linear-gradient(#05a9da, #4ea8c3);
+    background: -moz-linear-gradient(#05a9da, #4ea8c3);
+    background: linear-gradient(#05a9da, #4ea8c3);
+}
+
+.mytoogle-green:hover{
+    background: #05a9da;
+    background: -webkit-linear-gradient(#05a9da, #4ea8c3);
+    background: -o-linear-gradient(#05a9da, #4ea8c3);
+    background: -moz-linear-gradient(#05a9da, #4ea8c3);
+    background: linear-gradient(#05a9da, #4ea8c3);
 }
 
 /* responsive text queries */
@@ -284,6 +321,9 @@ h3 {
     h3 {
         font-size: 18px;
     }
+    sub_item{
+        font-size: 1.5em;
+    }
 }
 @media screen and (max-width: 768px) {
     p,
@@ -302,6 +342,9 @@ h3 {
     }
     h3 {
         font-size: 16px;
+    }
+    sub_item{
+        font-size: 1.5em;
     }
 }
 
@@ -361,4 +404,9 @@ h3 {
 
 #nav-assistenza:hover{
     background-color: #5cb85c;
+}
+
+#sl-panel{
+    opacity: 0.6;
+    filter: alpha(opacity=60);
 }
