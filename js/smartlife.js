@@ -31,7 +31,7 @@ $(document).ready(function () {
                 
             }
 
-            $(".categorie").html(icone);
+            $("#categorie").html(icone);
             $(".container").append(banners);
             
             for(var j = 0; j < cat.length; j++){
