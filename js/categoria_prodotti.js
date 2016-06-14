@@ -10,6 +10,7 @@ var id = getUrlVars()["id"];
 var queryCondition = "";
 
 $(document).ready(function () {
+    
     $.ajax({
         method: "POST",
         crossDomain: true,
@@ -81,6 +82,12 @@ $(document).ready(function () {
 
         }
     });
+    
+    if(id == 'outlet'){
+        $("#in_promozione").attr("disabled",true);
+        $('#in_promozione').prop('checked', true);
+        $('#in_promozione').css("opacity","0.6");
+    }
 });
 
 $(document).on('click', '#toogleFiltro', function () {
