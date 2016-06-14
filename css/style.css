@@ -17,6 +17,17 @@ footer {
   height: 60px;
   padding: 5px;
 }
+
+#nav-chisiamo{
+    box-shadow: 2px 2px 10px #888888;
+    background-color: rgba(255,255,255,0.9);
+    position: fixed;
+    top:50px;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+}
 .container {
     margin-top: 55px;
 }
@@ -444,4 +455,44 @@ h3 {
 #sl-panel{
     opacity: 0.6;
     filter: alpha(opacity=60);
+}
+
+.scrollToTop{
+	padding:5px; 
+	text-align:center; 
+	background: rgba(0,54,114,0.5);
+	font-weight: bold;
+	color: white;
+	text-decoration: none;
+	position:fixed;
+	bottom:20px;
+	right:20px;
+	display:none;
+    padding-top: 23px;
+    padding-bottom: 23px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+}
+.scrollToTop:hover{
+	text-decoration:none;
+}
+.scrollToTop > h1{
+    margin: 0;
+}
+
+.sezione-chisiamo{
+    padding: 80px;
+    min-height: 400px;
+    display: block; 
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 1);
+    line-height: 1.2em;
+    font-weight: 300;
+}
+
+#main{
+    margin-top: 50px;
+    background-color: #01417f;
+    padding-top: 105px;
+    color: white;
 }
