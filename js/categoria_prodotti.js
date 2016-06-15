@@ -86,7 +86,7 @@ $(document).ready(function () {
     if(id == 'outlet'){
         $("#in_promozione").attr("disabled",true);
         $('#in_promozione').prop('checked', true);
-        $('#in_promozione').css("opacity","0.6");
+        $('#in_promozione').css("color","#ccc");
     }
 });
 
