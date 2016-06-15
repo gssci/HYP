@@ -43,6 +43,8 @@ footer {
 .row-inner{
     margin-left: 3px;
     margin-right: 3px;
+    padding-bottom: 4px;
+    padding-top: 4px;
 }
 .row-inner > h4 {
     margin: 3px;
