@@ -7,15 +7,17 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>
     <script src="js/categoria_prodotti.js"></script>
     <title></title>
+
 </head>
 
 <body>
-    
+
     <div class="container">
         <a href="prodotti.html" class="btn btn-info" role="button">Prodotti<span class="glyphicon glyphicon-menu-right"></span></a>
 
@@ -33,7 +35,7 @@
                     <div class="row row-inner">
                         <h4><span class="label label-info">Mostra solo:</span> </h4>
                         <label class="checkbox-inline">
-                            <input type="checkbox" class="mostra_solo" value="in_promozione=1">In promozione</label>
+                            <input type="checkbox" class="mostra_solo" value="in_promozione=1" id="in_promozione">In promozione</label>
                     </div>
                     <div class="row row-inner">
                         <h4><span class="label label-info">Prezzo:</span></h4>
@@ -48,15 +50,15 @@
                     </div>
                     <div class="row row-inner" id="produttori">
                         <h4><span class="label label-info">Produttore:</span></h4></div>
-                    
+
                 </div>
-                
+
                 <div id="lista-prodotti" style="margin-top:10px;"></div>
             </div>
 
         </div>
     </div>
-        <a href="#" class="scrollToTop"><h1 class="glyphicon glyphicon-chevron-up"></h1></a>
+    <a href="#" class="scrollToTop"><h1 class="glyphicon glyphicon-chevron-up"></h1></a>
 </body>
 
 </html>
