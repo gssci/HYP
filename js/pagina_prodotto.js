@@ -190,7 +190,7 @@ $(document).ready(function () {
 
 
 $(document).on('click', '.mytoogle', function () {
-    $(this).find("p").toggleClass("glyphicon-plus");
-    $(this).find("p").toggleClass("glyphicon-minus");
+    $(this).find("p").toggleClass("glyphicon-collapse-up");
+    $(this).find("p").toggleClass("glyphicon-collapse-down");
 });
 
