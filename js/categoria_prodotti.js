@@ -110,20 +110,29 @@ $(document).on('change', ':checkbox', function () {
 
     if ($(this).is(':checked')) {
         if ($('.' + classe).filter(':checked').length >= 2) {
-            queryCondition += "OR " + value + " ";
+            queryCondition = riapriParentesi(queryCondition, classe);
+            queryCondition += "OR " + value + ")";
         } else {
-            queryCondition += "AND " + value + " ";
+            queryCondition += "AND (" + value + ")";
         }
 
         console.log('queryCondition: ' + queryCondition);
         filtro(queryCondition);
     } else {
-        queryCondition = queryCondition.replace("OR " + value + " ", "");
-        queryCondition = queryCondition.replace("AND " + value + " ", "");
-
-        if (count(classe) < 1) {
+        
+        if(count(classe) == 1){
+            queryCondition = queryCondition.replace("AND (" + value + ")", "");
+            
+        }
+        
+          queryCondition = queryCondition.replace("OR " + value + ")", ")");
+         queryCondition = queryCondition.replace("OR " + value,"");
+        
+       queryCondition = queryCondition.replace("AND (" + value, "");
+           
+        if (count(classe) == 0) {
             $("." + classe).each(function () {
-                queryCondition = queryCondition.replace("OR " + $(this).val() + " ", "AND " + $(this).val() + " ");
+                queryCondition = queryCondition.replace("OR " + $(this).val(), "AND (" + $(this).val());
                 if(count(classe) >= 1){
                     return false;
                 }
@@ -140,13 +149,37 @@ function count(classe) {
     var count = 0;
 
     $("." + classe).each(function () {
-        if (queryCondition.match("AND " + $(this).val() + " ") != null) {
+        if (queryCondition.match(escapeRegExp("AND (" + $(this).val())) != null) {
             count = count + 1;
         }
     });
     
     return count;
 }
+
+function riapriParentesi(string, classe){
+    
+    var queryCondition = string;
+    var regex;
+    
+    $("." + classe).each(function () {
+        regex = new RegExp(escapeRegExp("AND (" + $(this).val() + ")"));
+        regex2 = new RegExp(escapeRegExp("OR " + $(this).val() + ")"));
+        if (regex.test(queryCondition)) {
+            queryCondition = queryCondition.replace("AND (" + $(this).val() + ")","AND (" + $(this).val());
+        }
+        if (regex2.test(queryCondition)){
+            queryCondition = queryCondition.replace("OR " + $(this).val() + ")","OR " + $(this).val());
+        }
+    });
+    
+    return queryCondition;
+}
+
+function escapeRegExp(str) {
+  return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+}
+
 //query database based on the checked boxes
 function filtro(query_cond) {
     $("#lista-prodotti").empty();
