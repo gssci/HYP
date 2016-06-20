@@ -1,12 +1,4 @@
-function getUrlVars() {
-    var vars = {};
-    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
-        vars[key] = value;
-    });
-    return vars;
-}
-
-var id = getUrlVars()["id"];
+var id = localStorage.getItem("cat_prodotto");
 var queryCondition = "";
 
 $(document).ready(function () {
@@ -45,7 +37,7 @@ $(document).ready(function () {
             var prodotti = JSON.parse(response);
             var el = "";
             for (var i = 0; i < prodotti.length; i++) {
-                el += "<div class='col-sm-4'><div class='well well-sm'><h5>" + prodotti[i].produttore + "</h5><br><h3>" + prodotti[i].nome + "</h3><br><a href='pagina_prodotto.html?id=" + prodotti[i].id + "&cat=" + prodotti[i].categoria + "'><img src='" + prodotti[i].url_immagine + "' class='img-responsive img-thumbnail' alt='" + prodotti[i].nome + "'></a><br><h4>€" + prodotti[i].prezzo + "</h4><a href='pagina_prodotto.html?id=" + prodotti[i].id + "&cat=" + prodotti[i].categoria + "' class='btn btn-info' role='button'>Dettagli</a></div></div>";
+                el += "<div class='col-sm-4'><div class='well well-sm'><h5>" + prodotti[i].produttore + "</h5><br><h3>" + prodotti[i].nome + "</h3><br><a href='pagina_prodotto.html' class='linkProdotto' id='"+prodotti[i].id+"' data-categoria='"+prodotti[i].categoria+"'><img src='" + prodotti[i].url_immagine + "' class='img-responsive img-thumbnail' alt='" + prodotti[i].nome + "'></a><br><h4>€" + prodotti[i].prezzo + "</h4><a href='pagina_prodotto.html' class='btn btn-info linkProdotto' role='button' id='"+prodotti[i].id+"' data-categoria='"+prodotti[i].categoria+"'>Dettagli</a></div></div>";
             }
 
             $("#lista-prodotti").append(el);
@@ -209,3 +201,4 @@ function filtro(query_cond) {
         }
     });
 }
+

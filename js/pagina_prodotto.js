@@ -6,8 +6,8 @@ function getUrlVars() {
     return vars;
 }
 
-var id = getUrlVars()["id"];
-var categoria = getUrlVars()["cat"];
+var id = localStorage.getItem("id_prodotto");
+var categoria = localStorage.getItem("id_categoria");
 
 $(document).ready(function () {
     $.ajax({
@@ -22,6 +22,8 @@ $(document).ready(function () {
         success: function (response) {
             console.log(JSON.parse(response));
             var result = JSON.parse(response);
+            categoria = result[0].categoria;
+            console.log(categoria);
             var nome = result[0].nome;
             $("title").html(nome);
             $(".nome_prodotto").html(nome);
@@ -46,6 +48,7 @@ $(document).ready(function () {
             where: "id='" + categoria + "'"
         },
         success: function (response) {
+            console.log(categoria);
             console.log(JSON.parse(response));
             var result = JSON.parse(response);
             var nome = result[0].nome;

@@ -36,3 +36,12 @@
 
 
         });
+
+$(document).on('click','.linkProdotto', function () {
+localStorage.setItem("id_categoria", $(this).attr('data-categoria'));
+localStorage.setItem("id_prodotto", $(this).attr('id'));
+});
+
+$(document).on('click','.linkCatProdotto', function () {
+   localStorage.setItem("cat_prodotto", $(this).attr('id'));
+});
