@@ -23,9 +23,9 @@ $(document).ready(function () {
                     banners += "<div id='banner_"+i+"' class='banner-cropped img-banner cn'><div class='inner col-xs-10 col-sm-4'><h2 class='white-title'>"+cat[i].nome+"</h2><p>"+cat[i].sottotitolo+"</p></div></div>";
                 }
                 else{
-                    icone += "<div class='col-xs-4 col-sm-2'><a href='categoria_smartlife.html?id=" + cat[i].id + "'><img src='" + cat[i].url_icona + "' alt='" + cat[i].nome + "' /><br>" + cat[i].nome + "</a></div>";
+                    icone += "<div class='col-xs-4 col-sm-2'><a href='categoria_smartlife.html' class='linkCatSL' id='" + cat[i].id + "'><img src='" + cat[i].url_icona + "' alt='" + cat[i].nome + "' /><br>" + cat[i].nome + "</a></div>";
                 
-                banners += "<div id='banner_"+i+"' class='banner-cropped img-banner cn'><div class='inner col-xs-10 col-sm-4'><h2 class='white-title'>"+cat[i].nome+"</h2><p>"+cat[i].sottotitolo+"</p><a href='categoria_smartlife.html?id=" + cat[i].id + "' class='btn btn-warning' role='button'>Scopri</a></div></div>";
+                banners += "<div id='banner_"+i+"' class='banner-cropped img-banner cn'><div class='inner col-xs-10 col-sm-4'><h2 class='white-title'>"+cat[i].nome+"</h2><p>"+cat[i].sottotitolo+"</p><a href='categoria_smartlife.html' id='" + cat[i].id + "' class='btn btn-warning linkCatSL' role='button'>Scopri</a></div></div>";
                 }
                 
                 

@@ -14,7 +14,7 @@ $(document).ready(function () {
             var icone = "";
 
             for (var i = 0; i < cat.length; i++) {
-                icone += "<div class='col-xs-4 col-sm-2'><a href='categoria_assistenza.html?id=" + cat[i].id + "'><img src='" + cat[i].url_icona + "' alt='" + cat[i].nome + "' /><br>" + cat[i].nome + "</div>";
+                icone += "<div class='col-xs-4 col-sm-2'><a href='categoria_assistenza.html' class='linkCatAssistenza' id='" + cat[i].id + "'><img src='" + cat[i].url_icona + "' alt='" + cat[i].nome + "' /><br>" + cat[i].nome + "</a></div>";
             }
 
             $("#categorie").html(icone);
@@ -38,7 +38,7 @@ $(document).ready(function () {
             var ev = JSON.parse(response);
             var box_evidenza = "";
             for (var i = 0; i < ev.length; i++) {
-                 box_evidenza += "<div class='col-sm-4'><a class='"+ev[i].tipo+"' href='pagina_assistenza.html?id=" + ev[i].id + "&cat=" + ev[i].id_categoria + "'><div class='myWell'><p class='evidenza'>" + ev[i].nome + "</p></div></a></div>";
+                 box_evidenza += "<div class='col-sm-4'><a class='linkAssistenza "+ev[i].tipo+"' href='pagina_assistenza.html' id='"+ev[i].id+"' data-categoria='"+ev[i].id_categoria +"' ><div class='myWell'><p class='evidenza'>" + ev[i].nome + "</p></div></a></div>";
             }
 
             $("#in_evidenza").append(box_evidenza);

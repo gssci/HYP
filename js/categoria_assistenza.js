@@ -1,11 +1,4 @@
-function getUrlVars() {
-    var vars = {};
-    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
-        vars[key] = value;
-    });
-    return vars;
-}
-var id = getUrlVars()["id"];
+var id = localStorage.getItem("cat_assistenza");
 
 $(document).ready(function () {
 
@@ -44,7 +37,7 @@ $(document).ready(function () {
             var el = "";
             var buttons = "";
             for (var i = 0; i < ass.length; i++) {
-                el += "<div class='col-sm-4'><a class='link_assistenza " + ass[i].tipo.replace(/\s+/g, '') + "' href='pagina_assistenza.html?id=" + ass[i].id + "&cat=" + ass[i].id_categoria + "'><div class='myWell'><p class='evidenza'>" + ass[i].nome + "</p></div></a></div>";
+                el += "<div class='col-sm-4'><a class='linkAssistenza link_assistenza " + ass[i].tipo.replace(/\s+/g, '') + "' href='pagina_assistenza.html' id='" + ass[i].id + "' data-categoria='" + ass[i].id_categoria + "'><div class='myWell'><p class='evidenza'>" + ass[i].nome + "</p></div></a></div>";
             }
 
             $("#lista-assistenza").append(el);

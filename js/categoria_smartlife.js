@@ -1,12 +1,4 @@
-function getUrlVars() {
-    var vars = {};
-    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
-        vars[key] = value;
-    });
-    return vars;
-}
-
-var id = getUrlVars()["id"];
+var id = localStorage.getItem("cat_SL");
 
 $(document).ready(function () {
     $.ajax({
@@ -22,7 +14,6 @@ $(document).ready(function () {
             console.log(JSON.parse(response));
             var result = JSON.parse(response);
             $("#categoria").append(result[0].nome);
-            //$("#tipo").append(result[0].tipo);
             $("title").html(result[0].nome);
 
         },
@@ -45,7 +36,7 @@ $(document).ready(function () {
             var result = JSON.parse(response);
             var el = "";
 for (var i = 0; i < result.length; i++) {
-                el += "<div class='col-sm-4'><div class='well well-sm'><h3>" + result[i].nome + "</h3><br><h5>" + result[i].sottotitolo + "</h5><br><a href='pagina_smartlife.html?id=" + result[i].id + "&cat=" + result[i].id_categoria + "'><img src='" + result[i].thumbnail + "' class='img-responsive img-thumbnail' alt='" + result[i].nome + "'></a><br><br><a href='pagina_smartlife.html?id=" + result[i].id + "&cat=" + result[i].id_categoria + "' class='btn btn-warning btn-lg' role='button'>Scopri</a></div></div>";
+                el += "<div class='col-sm-4'><div class='well well-sm'><h3>" + result[i].nome + "</h3><br><h5>" + result[i].sottotitolo + "</h5><br><a href='pagina_smartlife.html' class='linkSL' id='" + result[i].id + "' data-categoria='" + result[i].id_categoria + "'><img src='" + result[i].thumbnail + "' class='img-responsive img-thumbnail' alt='" + result[i].nome + "'></a><br><br><a href='pagina_smartlife.html' class='btn btn-warning btn-lg linkSL' id='" + result[i].id + "' data-categoria='" + result[i].id_categoria + "' role='button'>Scopri</a></div></div>";
             }
 
             $("#lista-servizi").append(el);

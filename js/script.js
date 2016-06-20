@@ -37,11 +37,34 @@
 
         });
 
-$(document).on('click','.linkProdotto', function () {
-localStorage.setItem("id_categoria", $(this).attr('data-categoria'));
-localStorage.setItem("id_prodotto", $(this).attr('id'));
-});
+        $(document).on('click', '.linkProdotto', function () {
+            localStorage.setItem("cat_prodotto", $(this).attr('data-categoria'));
+            localStorage.setItem("id_prodotto", $(this).attr('id'));
+        });
 
-$(document).on('click','.linkCatProdotto', function () {
-   localStorage.setItem("cat_prodotto", $(this).attr('id'));
-});
+        $(document).on('click', '.linkCatProdotto', function () {
+            localStorage.setItem("cat_prodotto", $(this).attr('id'));
+        });
+
+        $(document).on('click', '.linkSL', function () {
+            localStorage.setItem("cat_SL", $(this).attr('data-categoria'));
+            localStorage.setItem("id_SL", $(this).attr('id'));
+        });
+
+        $(document).on('click', '.linkCatSL', function () {
+            localStorage.setItem("cat_SL", $(this).attr('id'));
+        });
+
+        $(document).on('click', '.linkAssistenza', function () {
+            localStorage.setItem("cat_assistenza", $(this).attr('data-categoria'));
+            localStorage.setItem("id_assistenza", $(this).attr('id'));
+        });
+
+        $(document).on('click', '.linkCatAssistenza', function () {
+            localStorage.setItem("cat_assistenza", $(this).attr('id'));
+        });
+
+        $(document).on('click', '.mytoogle', function () {
+            $(this).find("p").toggleClass("glyphicon-collapse-up");
+            $(this).find("p").toggleClass("glyphicon-collapse-down");
+        });

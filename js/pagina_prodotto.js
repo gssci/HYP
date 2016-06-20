@@ -1,13 +1,5 @@
-function getUrlVars() {
-    var vars = {};
-    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
-        vars[key] = value;
-    });
-    return vars;
-}
-
 var id = localStorage.getItem("id_prodotto");
-var categoria = localStorage.getItem("id_categoria");
+var categoria = localStorage.getItem("cat_prodotto");
 
 $(document).ready(function () {
     $.ajax({
@@ -22,15 +14,13 @@ $(document).ready(function () {
         success: function (response) {
             console.log(JSON.parse(response));
             var result = JSON.parse(response);
-            categoria = result[0].categoria;
-            console.log(categoria);
             var nome = result[0].nome;
             $("title").html(nome);
             $(".nome_prodotto").html(nome);
             $(".prezzo").prepend(result[0].prezzo);
             $(".immagine_prodotto").attr("src", result[0].url_immagine);
             $(".immagine_prodotto").attr("alt", nome);
-            $(".goto_categoria").attr("href", "categoria_prodotti.html?id=" + result[0].categoria);
+            $(".linkCatProdotto").attr("id", result[0].categoria);
             $("#descrizione").append(result[0].descrizione);
         },
         error: function (request, error) {
@@ -48,11 +38,10 @@ $(document).ready(function () {
             where: "id='" + categoria + "'"
         },
         success: function (response) {
-            console.log(categoria);
             console.log(JSON.parse(response));
             var result = JSON.parse(response);
             var nome = result[0].nome;
-            $(".goto_categoria").prepend(nome);
+            $(".linkCatProdotto").prepend(nome);
 
         },
         error: function (request, error) {
@@ -121,7 +110,7 @@ $(document).ready(function () {
                         var result = JSON.parse(response);
                         var el = "";
                         for (var j = 0; j < result.length; j++) {
-                            el += "<td><div class='well well-sm' style='height:325px; width:300px;'><h3>" + result[j].nome + "</h3><br><h5>" + result[j].sottotitolo + "</h5><br><a href='pagina_smartlife.html?id=" + result[j].id + "&cat=" + result[j].id_categoria + "'><img src='" + result[j].thumbnail + "' class='img-responsive img-thumbnail' alt='" + result[j].nome + "'></a></div></td>";
+                            el += "<td><div class='well well-sm' style='height:325px; width:300px;'><h3>" + result[j].nome + "</h3><br><h5>" + result[j].sottotitolo + "</h5><br><a class='linkSL' href='pagina_smartlife.html' id='" + result[j].id + "' data-categoria='" + result[j].id_categoria+ "'><img src='" + result[j].thumbnail + "' class='img-responsive img-thumbnail' alt='" + result[j].nome + "'></a></div></td>";
                         }
 
                         $("#servizi").find("tr").append(el);
@@ -169,7 +158,7 @@ $(document).ready(function () {
                         var ass = JSON.parse(response);
                         var el = "";
                         for (var j = 0; j < ass.length; j++) {
-                            el += "<div class='col-sm-4'><a class='link_assistenza " + ass[j].tipo.replace(/\s+/g, '') + "' href='pagina_assistenza.html?id=" + ass[j].id + "&cat=" + ass[j].id_categoria + "'><div class='myWell'><p class='evidenza'>" + ass[j].nome + "</p></div></a></div>";
+                            el += "<div class='col-sm-4'><a class='linkAssistenza link_assistenza " + ass[j].tipo.replace(/\s+/g, '') + "' href='pagina_assistenza.html' id='" + ass[j].id + "' data-categoria='" + ass[j].id_categoria + "'><div class='myWell'><p class='evidenza'>" + ass[j].nome + "</p></div></a></div>";
                         }
 
                         $("#assistenza").find(".row").append(el);
@@ -190,10 +179,3 @@ $(document).ready(function () {
    
 
 });
-
-
-$(document).on('click', '.mytoogle', function () {
-    $(this).find("p").toggleClass("glyphicon-collapse-up");
-    $(this).find("p").toggleClass("glyphicon-collapse-down");
-});
-
