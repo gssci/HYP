@@ -26,12 +26,21 @@ footer {
 .icone{
     padding: 10px;
 }
+#filtro{
+    background-color:#f5f5f5;
+    
+    padding-bottom: 8px;
+    padding-top: 4px;
+}
 .filtro-header{
     margin: 0;
 }
 .row-inner{
     margin-left: 3px;
     margin-right: 3px;
+}
+.row-padded{
+    margin-bottom: 5px;
 }
 .row-inner > h4 {
     margin: 3px;
@@ -134,7 +143,9 @@ footer {
     height: 400px;
     background-position: center center;
     background-repeat: no-repeat;
+   
 }
+
 .left-cropped {
     width: 100%;
     height: 200px;
@@ -187,6 +198,21 @@ footer {
     line-height: 1.2em;
     background-color: rgba(218, 125, 47, 0.6);
 }
+
+.sub_item-cs {
+    background-color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+    display: block;
+    padding: 0;
+    font-weight: 300;
+    margin: 3%;
+}
+.divisor{
+    min-height: 25px;
+    background-color: white;
+    width: 100%;
+    margin: 0;
+}
 .cn {
   display: flex;
   justify-content: flex-end;
@@ -197,6 +223,10 @@ footer {
   text-align: right;
   padding: 3px;
   color: white;
+}
+.collapse-icon{
+    float:right;
+    margin:2px;
 }
 .white-title{
     background-color:rgba(255, 255, 255, 0.3);
@@ -381,6 +411,9 @@ h3 {
     sub_item{
         font-size: 1.5em;
     }
+    .row-inner > h4 {
+        font-size: 110%;
+    }
 }
 
 .evidenza{
@@ -445,3 +478,30 @@ h3 {
     opacity: 0.6;
     filter: alpha(opacity=60);
 }
+
+.scrollToTop{
+	padding:5px; 
+	text-align:center; 
+	background: rgba(0,54,114,0.5);
+	font-weight: bold;
+	color: white;
+	text-decoration: none;
+	position:fixed;
+	bottom:20px;
+	right:20px;
+	display:none;
+    padding-top: 23px;
+    padding-bottom: 23px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+}
+.scrollToTop:hover{
+	text-decoration:none;
+}
+.scrollToTop > h1{
+    margin: 0;
+}
+
+
+
