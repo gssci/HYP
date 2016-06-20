@@ -10,7 +10,7 @@ var id = getUrlVars()["id"];
 var queryCondition = "";
 
 $(document).ready(function () {
-    
+
     $.ajax({
         method: "POST",
         crossDomain: true,
@@ -82,21 +82,20 @@ $(document).ready(function () {
 
         }
     });
-    
-    if(id == 'outlet'){
-        $("#in_promozione").attr("disabled",true);
+
+    if (id == 'outlet') {
+        $("#in_promozione").attr("disabled", true);
         $('#in_promozione').prop('checked', true);
-        $('#in_promozione').css("color","#ccc");
+        $('#in_promozione').css("color", "#ccc");
     }
 });
 
 $(document).on('click', '#toogleFiltro', function () {
     $("#lista-prodotti").toggleClass("no-padding");
     $(this).toggleClass("active");
-    if($(this).html() == "Nascondi Filtri"){
+    if ($(this).html() == "Nascondi Filtri") {
         $(this).html("Mostra Filtri");
-    }
-    else{
+    } else {
         $(this).html("Nascondi Filtri");
     }
 });
@@ -107,7 +106,7 @@ $(document).on('change', ':checkbox', function () {
     //append or remove attr. value from query condition string
     var value = $(this).val();
     var classe = $(this).attr("class");
-
+    
     if ($(this).is(':checked')) {
         if ($('.' + classe).filter(':checked').length >= 2) {
             queryCondition = riapriParentesi(queryCondition, classe);
@@ -116,30 +115,28 @@ $(document).on('change', ':checkbox', function () {
             queryCondition += "AND (" + value + ")";
         }
 
-        console.log('queryCondition: ' + queryCondition);
         filtro(queryCondition);
     } else {
-        
-        if(count(classe) == 1){
+
+        if (count(classe) == 1) {
             queryCondition = queryCondition.replace("AND (" + value + ")", "");
-            
+
         }
-        
-          queryCondition = queryCondition.replace("OR " + value + ")", ")");
-         queryCondition = queryCondition.replace("OR " + value,"");
-        
-       queryCondition = queryCondition.replace("AND (" + value, "");
-           
+
+        queryCondition = queryCondition.replace("OR " + value + ")", ")");
+        queryCondition = queryCondition.replace("OR " + value, "");
+
+        queryCondition = queryCondition.replace("AND (" + value, "");
+
         if (count(classe) == 0) {
             $("." + classe).each(function () {
                 queryCondition = queryCondition.replace("OR " + $(this).val(), "AND (" + $(this).val());
-                if(count(classe) >= 1){
+                if (count(classe) >= 1) {
                     return false;
                 }
             });
         }
-        
-        console.log('queryCondition: ' + queryCondition);
+
         filtro(queryCondition);
     }
 
@@ -153,31 +150,31 @@ function count(classe) {
             count = count + 1;
         }
     });
-    
+
     return count;
 }
 
-function riapriParentesi(string, classe){
-    
+function riapriParentesi(string, classe) {
+
     var queryCondition = string;
     var regex;
-    
+
     $("." + classe).each(function () {
         regex = new RegExp(escapeRegExp("AND (" + $(this).val() + ")"));
         regex2 = new RegExp(escapeRegExp("OR " + $(this).val() + ")"));
         if (regex.test(queryCondition)) {
-            queryCondition = queryCondition.replace("AND (" + $(this).val() + ")","AND (" + $(this).val());
+            queryCondition = queryCondition.replace("AND (" + $(this).val() + ")", "AND (" + $(this).val());
         }
-        if (regex2.test(queryCondition)){
-            queryCondition = queryCondition.replace("OR " + $(this).val() + ")","OR " + $(this).val());
+        if (regex2.test(queryCondition)) {
+            queryCondition = queryCondition.replace("OR " + $(this).val() + ")", "OR " + $(this).val());
         }
     });
-    
+
     return queryCondition;
 }
 
 function escapeRegExp(str) {
-  return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+    return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
 }
 
 //query database based on the checked boxes
@@ -194,14 +191,18 @@ function filtro(query_cond) {
             where: "categoria='" + id + "'" + " " + queryCondition
         },
         success: function (response) {
-            console.log(JSON.parse(response));
-            var prodotti = JSON.parse(response);
-            var el = "";
-            for (var i = 0; i < prodotti.length; i++) {
-                el += "<div class='col-sm-4'><div class='well well-sm'><h5>" + prodotti[i].produttore + "</h5><br><h3>" + prodotti[i].nome + "</h3><br><a href='pagina_prodotto.html?id=" + prodotti[i].id + "&cat=" + prodotti[i].categoria + "'><img src='" + prodotti[i].url_immagine + "' class='img-responsive img-thumbnail' alt='" + prodotti[i].nome + "'></a><br><h4>€" + prodotti[i].prezzo + "</h4><a href='pagina_prodotto.html?id=" + prodotti[i].id + "&cat=" + prodotti[i].categoria + "' class='btn btn-info' role='button'>Dettagli</a></div></div>";
+            try {
+                var prodotti = JSON.parse(response);
+                var el = "";
+                for (var i = 0; i < prodotti.length; i++) {
+                    el += "<div class='col-sm-4'><div class='well well-sm'><h5>" + prodotti[i].produttore + "</h5><br><h3>" + prodotti[i].nome + "</h3><br><a href='pagina_prodotto.html?id=" + prodotti[i].id + "&cat=" + prodotti[i].categoria + "'><img src='" + prodotti[i].url_immagine + "' class='img-responsive img-thumbnail' alt='" + prodotti[i].nome + "'></a><br><h4>€" + prodotti[i].prezzo + "</h4><a href='pagina_prodotto.html?id=" + prodotti[i].id + "&cat=" + prodotti[i].categoria + "' class='btn btn-info' role='button'>Dettagli</a></div></div>";
+                }
+
+                $("#lista-prodotti").append(el);
+            } catch (err) {
+                $("#lista-prodotti").append("<div class='panel panel-default'><div class='panel-heading text-center'>Nessun prodotto nel database corrisponde a questi filtri...</div></div>");
             }
 
-            $("#lista-prodotti").append(el);
         },
         error: function (request, error) {
             console.log("Error");

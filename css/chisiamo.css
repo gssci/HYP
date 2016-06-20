@@ -1,7 +1,6 @@
 #nav-chisiamo{
-    box-shadow: 2px 2px 10px #888888;
-    background-color: rgba(0,52,110,0.7);
-    background-color: rgba(0,52,110,0.7);
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.4);
+    background-color: rgba(0,0,0,0.4);
     color: white;
     position: fixed;
     top:50px;
@@ -12,21 +11,21 @@
     
 }
 
-h3 > a {
+#nav-chisiamo a {
     color: white;
 }
 
-h3 > a:hover {
+#nav-chisiamo a:hover {
     color: #ccc;
     text-decoration: none;
 }
 
-h3 > a:active {
+#nav-chisiamo a:active {
     color: #ccc;
     text-decoration: none;
 }
 
-h3 > a:visited {
+#nav-chisiamo a:visited {
     color: white;
     text-decoration: none;
 }
