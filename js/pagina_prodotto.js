@@ -172,7 +172,7 @@ $(document).ready(function () {
 
 
     //Multiple images only available for smartphones
-    if (categoria == 'smartphone') {
+    if (categoria == 'smartphone' || categoria == 'outlet') {
         $.ajax({
             method: "POST",
             crossDomain: true,
