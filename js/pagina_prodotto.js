@@ -7,12 +7,11 @@ $(document).ready(function () {
         crossDomain: true,
         url: "http://polidoriscibetta.altervista.org/php/query.php",
         data: {
-            select: "*",
+            select: "nome, prezzo, url_immagine, categoria, descrizione",
             table: "prodotti",
             where: "id='" + id + "'"
         },
         success: function (response) {
-            console.log(JSON.parse(response));
             var result = JSON.parse(response);
             var nome = result[0].nome;
             $("title").html(nome);
@@ -59,7 +58,6 @@ $(document).ready(function () {
             where: "id='" + categoria + "'"
         },
         success: function (response) {
-            console.log(JSON.parse(response));
             var result = JSON.parse(response);
             var nome = result[0].nome;
             $(".linkCatProdotto").prepend(nome);
@@ -81,7 +79,6 @@ $(document).ready(function () {
             where: "id_prodotto='" + id + "'"
         },
         success: function (response) {
-            console.log(JSON.parse(response));
             var result = JSON.parse(response);
             var righe = "";
             for (var name in result[0]) {
@@ -113,7 +110,6 @@ $(document).ready(function () {
             where: "id_prodotto='" + id + "'"
         },
         success: function (response) {
-            console.log(JSON.parse(response));
             var id_servizi = JSON.parse(response);
             var servizi = "";
             for (var i = 0; i < id_servizi.length; i++) {
@@ -127,7 +123,6 @@ $(document).ready(function () {
                         where: "id='" + id_servizi[i].id_smartlife + "'"
                     },
                     success: function (response) {
-                        console.log(JSON.parse(response));
                         var result = JSON.parse(response);
                         var el = "";
                         for (var j = 0; j < result.length; j++) {
@@ -161,7 +156,6 @@ $(document).ready(function () {
             where: "id_prodotto='" + id + "'"
         },
         success: function (response) {
-            console.log(JSON.parse(response));
             var id_assistenza = JSON.parse(response);
             var assistenza = "";
             for (var i = 0; i < id_assistenza.length; i++) {
@@ -175,7 +169,6 @@ $(document).ready(function () {
                         where: "id='" + id_assistenza[i].id_assistenza + "'"
                     },
                     success: function (response) {
-                        console.log(JSON.parse(response));
                         var ass = JSON.parse(response);
                         var el = "";
                         for (var j = 0; j < ass.length; j++) {
