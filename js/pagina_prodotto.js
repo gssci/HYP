@@ -1,7 +1,7 @@
-var id = localStorage.getItem("id_prodotto");
-var categoria = localStorage.getItem("cat_prodotto");
-
 $(document).ready(function () {
+    var id = localStorage.getItem("id_prodotto");
+    var categoria = localStorage.getItem("cat_prodotto");
+
     $.ajax({
         method: "POST",
         crossDomain: true,
@@ -29,6 +29,27 @@ $(document).ready(function () {
     });
 
     $.ajax({
+        method: "POST",
+        crossDomain: true,
+        url: "http://polidoriscibetta.altervista.org/php/query.php",
+        data: {
+            select: "nome",
+            table: "categorie_prodotti",
+            where: "id='" + categoria + "'"
+        },
+        success: function (response) {
+            console.log(JSON.parse(response));
+            var result = JSON.parse(response);
+            var nome = result[0].nome;
+            $(".linkCatProdotto").prepend(nome);
+
+        },
+        error: function (request, error) {
+            console.log("Error");
+        }
+    });
+    
+        $.ajax({
         method: "POST",
         crossDomain: true,
         url: "http://polidoriscibetta.altervista.org/php/query.php",
@@ -81,8 +102,8 @@ $(document).ready(function () {
     });
 
 
-//Smartlife compatibili
-        $.ajax({
+    //Smartlife compatibili
+    $.ajax({
         method: "POST",
         crossDomain: true,
         url: "http://polidoriscibetta.altervista.org/php/query.php",
@@ -110,7 +131,7 @@ $(document).ready(function () {
                         var result = JSON.parse(response);
                         var el = "";
                         for (var j = 0; j < result.length; j++) {
-                            el += "<td><div class='well well-sm' style='height:325px; width:300px;'><h3>" + result[j].nome + "</h3><br><h5>" + result[j].sottotitolo + "</h5><br><a class='linkSL' href='pagina_smartlife.html' id='" + result[j].id + "' data-categoria='" + result[j].id_categoria+ "'><img src='" + result[j].thumbnail + "' class='img-responsive img-thumbnail' alt='" + result[j].nome + "'></a></div></td>";
+                            el += "<td><div class='well well-sm' style='height:325px; width:300px;'><h3>" + result[j].nome + "</h3><br><h5>" + result[j].sottotitolo + "</h5><br><a class='linkSL' href='pagina_smartlife.html' id='" + result[j].id + "' data-categoria='" + result[j].id_categoria + "'><img src='" + result[j].thumbnail + "' class='img-responsive img-thumbnail' alt='" + result[j].nome + "'></a></div></td>";
                         }
 
                         $("#servizi").find("tr").append(el);
@@ -127,10 +148,10 @@ $(document).ready(function () {
             console.log("Error");
         }
     });
-    
-    
-//Assistenza compatibili
-        $.ajax({
+
+
+    //Assistenza compatibili
+    $.ajax({
         method: "POST",
         crossDomain: true,
         url: "http://polidoriscibetta.altervista.org/php/query.php",
@@ -175,7 +196,7 @@ $(document).ready(function () {
             console.log("Error");
         }
     });
-    
-   
+
+
 
 });
