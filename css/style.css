@@ -523,3 +523,18 @@ h3 {
 .mytogglelink{
     text-decoration: none !important;
 }
+
+.img-galleria{
+    opacity: 0.5;
+    width: 50px;
+    margin-right: 10px;
+    margin-bottom: 25px;
+}
+
+.img-galleria:hover{
+    opacity: 1;
+}
+
+.img-galleria-selected{
+    opacity: 1;
+}

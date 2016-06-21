@@ -20,7 +20,7 @@ $(document).ready(function () {
             $(".immagine_prodotto").attr("src", result[0].url_immagine);
             $(".immagine_prodotto").attr("alt", nome);
             $(".linkCatProdotto").attr("id", result[0].categoria);
-            $("#descrizione").append(result[0].descrizione);
+            $("#descrizione").prepend(result[0].descrizione);
         },
         error: function (request, error) {
             console.log("Error");
@@ -28,27 +28,6 @@ $(document).ready(function () {
     });
 
     $.ajax({
-        method: "POST",
-        crossDomain: true,
-        url: "http://polidoriscibetta.altervista.org/php/query.php",
-        data: {
-            select: "nome",
-            table: "categorie_prodotti",
-            where: "id='" + categoria + "'"
-        },
-        success: function (response) {
-            console.log(JSON.parse(response));
-            var result = JSON.parse(response);
-            var nome = result[0].nome;
-            $(".linkCatProdotto").prepend(nome);
-
-        },
-        error: function (request, error) {
-            console.log("Error");
-        }
-    });
-    
-        $.ajax({
         method: "POST",
         crossDomain: true,
         url: "http://polidoriscibetta.altervista.org/php/query.php",
@@ -192,4 +171,49 @@ $(document).ready(function () {
 
 
 
+    //Multiple images only available for smartphones
+    if (categoria == 'smartphone') {
+        $.ajax({
+            method: "POST",
+            crossDomain: true,
+            url: "http://polidoriscibetta.altervista.org/php/query.php",
+            data: {
+                select: "url, is_principale",
+                table: "immagini_prodotto",
+                where: "id_prodotto='" + id + "'"
+            },
+            success: function (response) {
+                var result = JSON.parse(response);
+                if (result.length > 1) {
+                    var icone = "";
+                    for (var i = 0; i < result.length; i++) {
+                        if(result[i].is_principale == 1){
+                            
+                        icone += "<img class='img-galleria img-galleria-selected' src='" + result[i].url + "' /> ";
+                        }
+                        else {
+                            
+                        icone += "<img class='img-galleria' src='" + result[i].url + "' /> ";
+                        }
+                    }
+
+                    $("#galleria").append(icone);
+                }
+
+            },
+            error: function (request, error) {
+                console.log("Error");
+            }
+        });
+    }
+    
+    $(document).on('click', '.img-galleria', function () {
+                $("#immagine").attr("src", $(this).attr("src"));
+                
+                $(".img-galleria").each(function () {
+                    $(this).removeClass("img-galleria-selected");
+                });
+        
+                $(this).addClass("img-galleria-selected");
+            });
 });
