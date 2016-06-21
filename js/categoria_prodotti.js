@@ -62,7 +62,7 @@ $(document).ready(function () {
             var checkboxes = "";
             if (result.length > 1) {
                 for (var i = 0; i < result.length; i++) {
-                    checkboxes += "<label class='checkbox-inline'><input type='checkbox' class='produttore' value='produttore=&#39;" + result[i].produttore + "&#39;'>" + result[i].produttore + "</label>"
+                    checkboxes += "<button class='btn btn-xs btn-default btn-filtro' style='margin-right:5px; margin-bottom:5px;' data-tipo='produttore' value='produttore=&#39;" + result[i].produttore + "&#39;'>" + result[i].produttore + "</button>"
                 }
 
                 $("#produttori").append(checkboxes);
@@ -76,9 +76,8 @@ $(document).ready(function () {
     });
 
     if (id == 'outlet') {
-        $("#in_promozione").attr("disabled", true);
-        $('#in_promozione').prop('checked', true);
-        $('#in_promozione').css("color", "#ccc");
+        $("#in_promozione").removeClass("btn-filtro");
+        $("#in_promozione").addClass("disabled");
     }
 });
 
@@ -93,14 +92,14 @@ $(document).on('click', '#toogleFiltro', function () {
 });
 
 //We about to get crazy y'all
-
-$(document).on('change', ':checkbox', function () {
+$(document).on('click', '.btn-filtro', function () {
     //append or remove attr. value from query condition string
-    var value = $(this).val();
-    var classe = $(this).attr("class");
+    $(this).toggleClass("active");
+    var value = $(this).attr("value");
+    var classe = $(this).attr("data-tipo");
     
-    if ($(this).is(':checked')) {
-        if ($('.' + classe).filter(':checked').length >= 2) {
+    if ($(this).is('.active')) {
+        if ($("[data-tipo='"+classe+"']").filter('.active').length >= 2) {
             queryCondition = riapriParentesi(queryCondition, classe);
             queryCondition += "OR " + value + ")";
         } else {
@@ -121,8 +120,8 @@ $(document).on('change', ':checkbox', function () {
         queryCondition = queryCondition.replace("AND (" + value, "");
 
         if (count(classe) == 0) {
-            $("." + classe).each(function () {
-                queryCondition = queryCondition.replace("OR " + $(this).val(), "AND (" + $(this).val());
+            $("[data-tipo='"+classe+"']").each(function () {
+                queryCondition = queryCondition.replace("OR " + $(this).attr("value"), "AND (" + $(this).attr("value"));
                 if (count(classe) >= 1) {
                     return false;
                 }
@@ -134,11 +133,12 @@ $(document).on('change', ':checkbox', function () {
 
 });
 
+
 function count(classe) {
     var count = 0;
 
-    $("." + classe).each(function () {
-        if (queryCondition.match(escapeRegExp("AND (" + $(this).val())) != null) {
+    $("[data-tipo='"+classe+"']").each(function () {
+        if (queryCondition.match(escapeRegExp("AND (" + $(this).attr("value"))) != null) {
             count = count + 1;
         }
     });
@@ -151,14 +151,14 @@ function riapriParentesi(string, classe) {
     var queryCondition = string;
     var regex;
 
-    $("." + classe).each(function () {
-        regex = new RegExp(escapeRegExp("AND (" + $(this).val() + ")"));
-        regex2 = new RegExp(escapeRegExp("OR " + $(this).val() + ")"));
+    $("[data-tipo='"+classe+"']").each(function () {
+        regex = new RegExp(escapeRegExp("AND (" + $(this).attr("value") + ")"));
+        regex2 = new RegExp(escapeRegExp("OR " + $(this).attr("value") + ")"));
         if (regex.test(queryCondition)) {
-            queryCondition = queryCondition.replace("AND (" + $(this).val() + ")", "AND (" + $(this).val());
+            queryCondition = queryCondition.replace("AND (" + $(this).attr("value") + ")", "AND (" + $(this).attr("value"));
         }
         if (regex2.test(queryCondition)) {
-            queryCondition = queryCondition.replace("OR " + $(this).val() + ")", "OR " + $(this).val());
+            queryCondition = queryCondition.replace("OR " + $(this).attr("value") + ")", "OR " + $(this).attr("value"));
         }
     });
 

@@ -36,27 +36,28 @@
 
             <div class="panel-body no-padding">
                 <div class="row collapse in" id="filtro">
-
-                    <div class="row row-inner row-padded">
-                        <h4><span class="label label-info">Mostra solo:</span> </h4>
-                        <label class="checkbox-inline">
-                            <input type="checkbox" class="mostra_solo" value="in_promozione=1" id="in_promozione">In promozione</label>
+                    <div class="table-responsive">
+                        <table id="table-filtri">
+                            <tr>
+                                <td>
+                                    <h4><span class="label label-info">Mostra solo:</span></h4> </td>
+                                <td>
+                                    <button class="btn btn-xs btn-default btn-filtro" id="in_promozione" data-tipo="mostra_solo" value="in_promozione=1">In Promozione</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><h4><span class="label label-info">Prezzo:</span></h4></td>
+                                <td><button class="btn btn-xs btn-default btn-filtro" data-tipo="prezzo" value="prezzo < '150.00'">&lt;150€</button>
+                                <button class="btn btn-xs btn-default btn-filtro" data-tipo="prezzo" value="prezzo >= '150.00' AND prezzo < '300.00'">150€-300€</button>
+                                <button class="btn btn-xs btn-default btn-filtro" data-tipo="prezzo" value="prezzo >= '300.00' AND prezzo < '450.00'">300€-450€</button>
+                                <button class="btn btn-xs btn-default btn-filtro" data-tipo="prezzo" value="prezzo > '450.00'">&gt;450€</button></td>
+                            </tr>
+                            <tr>
+                                <td><h4><span class="label label-info">Produttore:</span></h4></td>
+                                <td id="produttori"></td>
+                            </tr>
+                        </table>
                     </div>
-                    <div class="row row-inner row-padded">
-                        <h4><span class="label label-info">Prezzo:</span></h4>
-                        
-                        <label class="checkbox-inline">
-                            <input type="checkbox" class="prezzo" value="prezzo < '150.00'">&lt;150€</label>
-                        <label class="checkbox-inline">
-                            <input type="checkbox" class="prezzo" value="prezzo >= '150.00' AND prezzo < '300.00'">150€-300€</label>
-                        <label class="checkbox-inline">
-                            <input type="checkbox" class="prezzo" value="prezzo >= '300.00' AND prezzo < '450.00'">300€-450€</label>
-                        <label class="checkbox-inline">
-                            <input type="checkbox" class="prezzo" value="prezzo > '450.00'">&gt;450€</label>
-                    </div>
-                    <div class="row row-inner" id="produttori">
-                        <h4><span class="label label-info">Produttore:</span></h4></div>
-
                 </div>
 
                 <div id="lista-prodotti" style="margin-top:10px;"></div>

@@ -7,31 +7,27 @@
             $.ajax({
                 url: "includes/navbar.html",
                 success: function (result) {
-                    //this line creates jQuery object that contains DOM model for loaded page
-                    var navbar = jQuery(result);
-
+                    $("body").prepend(result);
                     var indirizzo = window.location.href;
-                    
+
                     if (indirizzo.includes("prodott")) {
-                        navbar.find('#nav-prodotti').addClass('highlight');
+                        $('#nav-prodotti').addClass('highlight');
                     }
-if (indirizzo.includes("smartlife")) {
-                        navbar.find('#nav-smartlife').addClass('highlight');
-                    }
-                    
-                    if (indirizzo.includes("assist")) {
-                        navbar.find('#nav-assistenza').addClass('highlight');
-                    }
-                    
-                    if (indirizzo.includes("contatt")) {
-                        navbar.find(".nav-link[href='contatti.html']").addClass('highlight');
-                    }
-                    
-                    if (indirizzo.includes("siamo")) {
-                        navbar.find(".nav-link[href='chi_siamo.html']").addClass('highlight');
+                    if (indirizzo.includes("smartlife")) {
+                        $('#nav-smartlife').addClass('highlight');
                     }
 
-                    $("body").prepend(navbar);
+                    if (indirizzo.includes("assist")) {
+                        $('#nav-assistenza').addClass('highlight');
+                    }
+
+                    if (indirizzo.includes("contatt")) {
+                        $(".nav-link[href='contatti.html']").addClass('highlight');
+                    }
+
+                    if (indirizzo.includes("siamo")) {
+                        $(".nav-link[href='chi_siamo.html']").addClass('highlight');
+                    }
                 }
             });
 

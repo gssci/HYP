@@ -72,7 +72,7 @@ $(document).ready(function () {
                 faq += "<div class='panel panel-success'><div class='panel-heading'><h4 class='panel-title'><a class='accordion-toggle' data-toggle='collapse' data-parent='#accordion' href='#faq_" + id_faq + "'>" + domanda + "</a></h4></div><div id='faq_" + id_faq + "' class='panel-collapse collapse'><div class='panel-body'>" + risposta + "</div></div></div>"
             }
 
-            $("#faq").append(faq);
+            $("#faq").prepend(faq);
         },
         error: function (request, error) {
             console.log("Error");
