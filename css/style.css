@@ -303,7 +303,7 @@ h3 {
     margin: 0;
     display: inline-block;
 }
-.mytoogle {
+.mytoggle {
     color: white;
     font-size: 20px;
     font-weight: 300;
@@ -325,7 +325,7 @@ h3 {
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
 }
-.mytoogle:hover {
+.mytoggle:hover {
     background: #05a9da;
     /* For browsers that do not support gradients */
     background: -webkit-linear-gradient(#05a9da, #4ea8c3);
@@ -338,7 +338,7 @@ h3 {
     /* Standard syntax */
 }
 
-.mytoogle-orange{
+.mytoggle-orange{
     background: #f0ae51;
     background: -webkit-linear-gradient(#f0ae51, #e6931e);
     background: -o-linear-gradient(#f0ae51, #e6931e);
@@ -346,7 +346,7 @@ h3 {
     background: linear-gradient(#f0ae51, #e6931e);
 }
 
-.mytoogle-orange:hover{
+.mytoggle-orange:hover{
     background: #f89c19;
     background: -webkit-linear-gradient(#f89c19, #e6931e);
     background: -o-linear-gradient(#f89c19, #e6931e);
@@ -354,7 +354,7 @@ h3 {
     background: linear-gradient(#f89c19, #e6931e);
 }
 
-.mytoogle-green{
+.mytoggle-green{
     background: #80b680;
     background: -webkit-linear-gradient(#80b680, #5cb85c);
     background: -o-linear-gradient(#80b680, #5cb85c);
@@ -362,7 +362,7 @@ h3 {
     background: linear-gradient(#80b680, #5cb85c);
 }
 
-.mytoogle-green:hover{
+.mytoggle-green:hover{
     background: #2bb52b;
     background: -webkit-linear-gradient(#2bb52b, #5cb85c);
     background: -o-linear-gradient(#2bb52b, #5cb85c);
@@ -520,3 +520,6 @@ h3 {
     margin: 0;
 }
 
+.mytogglelink{
+    text-decoration: none !important;
+}

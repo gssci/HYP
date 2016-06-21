@@ -86,7 +86,7 @@
                 localStorage.setItem("cat_assistenza", $(this).attr('id'));
             });
 
-            $(document).on('click', '.mytoogle', function () {
+            $(document).on('click', '.mytoggle', function () {
                 $(this).find("p").toggleClass("glyphicon-collapse-up");
                 $(this).find("p").toggleClass("glyphicon-collapse-down");
             });
