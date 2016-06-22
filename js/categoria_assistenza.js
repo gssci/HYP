@@ -1,7 +1,5 @@
-var id = localStorage.getItem("cat_assistenza");
-
 $(document).ready(function () {
-
+    var id = localStorage.getItem("cat_assistenza");
     $.ajax({
         method: "POST",
         crossDomain: true,
@@ -9,7 +7,7 @@ $(document).ready(function () {
         data: {
             select: "nome",
             table: "categorie_assistenza",
-            where: "id='" + id + "'"
+            where: "id='" + localStorage.getItem("cat_assistenza") + "'"
         },
         success: function (response) {
             console.log(JSON.parse(response));
@@ -29,7 +27,7 @@ $(document).ready(function () {
         data: {
             select: "*",
             table: "assistenza",
-            where: "id_categoria='" + id + "'"
+            where: "id_categoria='" + localStorage.getItem("cat_assistenza") + "'"
         },
         success: function (response) {
             console.log(JSON.parse(response));
@@ -56,23 +54,22 @@ $(document).ready(function () {
         data: {
             select: "DISTINCT tipo",
             table: "assistenza",
-            where: "id_categoria='" + id + "'"
+            where: "id_categoria='" + localStorage.getItem("cat_assistenza") + "'"
         },
         success: function (response) {
             console.log(JSON.parse(response));
             var result = JSON.parse(response);
             var buttons = "";
-            if(result.length>1){
+            if (result.length > 1) {
                 for (var i = 0; i < result.length; i++) {
-                buttons += "<button type='button' class='btn btn-success btn-xs' style='margin:2px;'>" + result[i].tipo + "</button>"
-            }
+                    buttons += "<button type='button' class='btn btn-success btn-xs' style='margin:2px;'>" + result[i].tipo + "</button>"
+                }
 
-            $("#btns-filtro").append(buttons);
-            }
-            else{
+                $("#btns-filtro").append(buttons);
+            } else {
                 $("#btns-filtro").hide();
             }
-            
+
         },
         error: function (request, error) {
             console.log("Error");

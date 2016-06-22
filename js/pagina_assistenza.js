@@ -1,10 +1,9 @@
-var id = localStorage.getItem("id_assistenza");
-var categoria = localStorage.getItem("cat_assistenza");
-
 $(document).ready(function () {
+    var id = localStorage.getItem("id_assistenza");
+    var categoria = localStorage.getItem("cat_assistenza");
 
     $("#toggle_prodotti").hide();
-    
+
     $.ajax({
         method: "POST",
         crossDomain: true,
@@ -12,7 +11,7 @@ $(document).ready(function () {
         data: {
             select: "*",
             table: "assistenza",
-            where: "id='" + id + "'"
+            where: "id='" + localStorage.getItem("id_assistenza") + "'"
         },
         success: function (response) {
             console.log(JSON.parse(response));
@@ -37,7 +36,7 @@ $(document).ready(function () {
         data: {
             select: "nome",
             table: "categorie_assistenza",
-            where: "id='" + categoria + "'"
+            where: "id='" + localStorage.getItem("cat_assistenza") + "'"
         },
         success: function (response) {
             console.log(JSON.parse(response));
@@ -58,7 +57,7 @@ $(document).ready(function () {
         data: {
             select: "*",
             table: "assistenza JOIN faq",
-            where: "assistenza.id = faq.id_assistenza AND id_assistenza='" + id + "'"
+            where: "assistenza.id = faq.id_assistenza AND id_assistenza='" + localStorage.getItem("id_assistenza") + "'"
         },
         success: function (response) {
             console.log(JSON.parse(response));
@@ -86,7 +85,7 @@ $(document).ready(function () {
         data: {
             select: "id_prodotto",
             table: "prodotti_assistenza",
-            where: "id_assistenza='" + id + "'"
+            where: "id_assistenza='" + localStorage.getItem("id_assistenza") + "'"
         },
         success: function (response) {
             console.log(JSON.parse(response));
@@ -129,4 +128,3 @@ $(document).ready(function () {
         }
     });
 });
-

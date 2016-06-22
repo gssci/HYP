@@ -9,7 +9,7 @@ $(document).ready(function () {
         data: {
             select: "nome, prezzo, url_immagine, categoria, descrizione",
             table: "prodotti",
-            where: "id='" + id + "'"
+            where: "id='" + localStorage.getItem("id_prodotto") + "'"
         },
         success: function (response) {
             var result = JSON.parse(response);
@@ -34,7 +34,7 @@ $(document).ready(function () {
         data: {
             select: "nome",
             table: "categorie_prodotti",
-            where: "id='" + categoria + "'"
+            where: "id='" + localStorage.getItem("cat_prodotto") + "'"
         },
         success: function (response) {
             var result = JSON.parse(response);
@@ -55,7 +55,7 @@ $(document).ready(function () {
         data: {
             select: "*",
             table: "specifiche_tecniche",
-            where: "id_prodotto='" + id + "'"
+            where: "id_prodotto='" + localStorage.getItem("id_prodotto") + "'"
         },
         success: function (response) {
             var result = JSON.parse(response);
@@ -86,7 +86,7 @@ $(document).ready(function () {
         data: {
             select: "id_smartlife",
             table: "prodotti_smartlife",
-            where: "id_prodotto='" + id + "'"
+            where: "id_prodotto='" + localStorage.getItem("id_prodotto") + "'"
         },
         success: function (response) {
             var id_servizi = JSON.parse(response);
@@ -132,7 +132,7 @@ $(document).ready(function () {
         data: {
             select: "id_assistenza",
             table: "prodotti_assistenza",
-            where: "id_prodotto='" + id + "'"
+            where: "id_prodotto='" + localStorage.getItem("id_prodotto") + "'"
         },
         success: function (response) {
             var id_assistenza = JSON.parse(response);
@@ -180,7 +180,7 @@ $(document).ready(function () {
             data: {
                 select: "url, is_principale",
                 table: "immagini_prodotto",
-                where: "id_prodotto='" + id + "'"
+                where: "id_prodotto='" + localStorage.getItem("id_prodotto") + "'"
             },
             success: function (response) {
                 var result = JSON.parse(response);

@@ -1,8 +1,6 @@
-var id = localStorage.getItem("id_SL");
-var categoria = localStorage.getItem("cat_SL");
-
 $(document).ready(function () {
-
+    var id = localStorage.getItem("id_SL");
+    var categoria = localStorage.getItem("cat_SL");
     $.ajax({
         method: "POST",
         crossDomain: true,
@@ -10,7 +8,7 @@ $(document).ready(function () {
         data: {
             select: "*",
             table: "smartlife",
-            where: "id='" + id + "'"
+            where: "id='" + localStorage.getItem("id_SL") + "'"
         },
         success: function (response) {
             console.log(JSON.parse(response));
@@ -19,7 +17,7 @@ $(document).ready(function () {
             $("title").html(nome);
             $(".nome").html(nome);
             $(".linkCatSL").attr("id", result[0].id_categoria);
-            $("#sl-body").css("background-image", "url('"+result[0].url_immagine+"')");
+            $("#sl-body").css("background-image", "url('" + result[0].url_immagine + "')");
             $("#descrizione").append(result[0].descrizione);
             $("#regolamento").append(result[0].activation_and_rules);
 
@@ -29,29 +27,29 @@ $(document).ready(function () {
         }
     });
 
-            $.ajax({
-            method: "POST",
-            crossDomain: true,
-            url: "http://polidoriscibetta.altervista.org/php/query.php",
-            data: {
-                select: "nome",
-                table: "categorie_smartlife",
-                where: "id='" + categoria + "'"
-            },
-            success: function (response) {
-                console.log(JSON.parse(response));
-                var result = JSON.parse(response);
-                var nome = result[0].nome;
-                $(".linkCatSL").prepend(nome);
-                
-            },
-            error: function (request, error) {
-                console.log("Error");
-            }
-        });
-    
+    $.ajax({
+        method: "POST",
+        crossDomain: true,
+        url: "http://polidoriscibetta.altervista.org/php/query.php",
+        data: {
+            select: "nome",
+            table: "categorie_smartlife",
+            where: "id='" + localStorage.getItem("cat_SL") + "'"
+        },
+        success: function (response) {
+            console.log(JSON.parse(response));
+            var result = JSON.parse(response);
+            var nome = result[0].nome;
+            $(".linkCatSL").prepend(nome);
+
+        },
+        error: function (request, error) {
+            console.log("Error");
+        }
+    });
+
     //Prodotti compatibili
-        $.ajax({
+    $.ajax({
         method: "POST",
         crossDomain: true,
         url: "http://polidoriscibetta.altervista.org/php/query.php",
