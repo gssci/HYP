@@ -9,7 +9,7 @@ gruppo: Lucia Polidori, Gerlando Savio Scibetta
 An exception to this is the link for the category of *Salute and Benessere* under *Smartlife*, the reason is that it contained a serious inconsistency with our 
 design w.r.t. the real TIM website (it contained products not services!)
 
-* We included a fully functional **Filter** for the product and assistance pages.
+* We included a fully functional **Filter** for the product and assistance pages (where applicable).
 
 * To make the website more **usable** (especially in the mobile) we included a button that sends the user back to the top of the page after it scrolls down a certain amount. 
 

@@ -74,6 +74,10 @@ h3{
     background-color: rgba(0, 0, 0, 0.2);
 }
 
+.testimonial{
+        margin-top: 0;
+    margin-bottom: 0;
+}
 .descrizione-white {
     text-align: center;
     display: block;

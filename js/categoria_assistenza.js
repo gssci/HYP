@@ -62,7 +62,7 @@ $(document).ready(function () {
             if (result.length > 1) {
                 $("#filtro-ass").show();
                 for (var i = 0; i < result.length; i++) {
-                    buttons += "<button type='button' class='btn btn-default btn-xs' style='margin:2px;'>" + result[i].tipo + "</button>"
+                    buttons += "<button type='button' class='btn btn-success btn-xs' style='margin:2px;'>" + result[i].tipo + "</button>"
                 }
 
                 $("#btns-filtro").append(buttons);
@@ -78,8 +78,7 @@ $(document).ready(function () {
         }
     });
 
-});
-
+    
 
 $(document).on('click', 'button', function () {
     $(this).toggleClass("active");
@@ -97,3 +96,5 @@ $(document).on('click', 'button', function () {
     $(".link_assistenza").removeClass("invisible");
     }
 });
+});
+
