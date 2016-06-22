@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    // var id = localStorage.getItem("cat_prodotto");
+    // var id = localStorage.getItem("cat_prodotto"); unused to ensure correct async calls
     var queryCondition = "";
     
     $.ajax({

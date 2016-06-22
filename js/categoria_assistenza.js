@@ -1,6 +1,7 @@
 $(document).ready(function () {
     // var id = localStorage.getItem("cat_assistenza"); unused to make sure the id is taken in each (Asynchronus) call
-    
+    $("#filtro-ass").hide();
+
     $.ajax({
         method: "POST",
         crossDomain: true,
@@ -59,13 +60,15 @@ $(document).ready(function () {
             var result = JSON.parse(response);
             var buttons = "";
             if (result.length > 1) {
+                $("#filtro-ass").show();
                 for (var i = 0; i < result.length; i++) {
-                    buttons += "<button type='button' class='btn btn-success btn-xs' style='margin:2px;'>" + result[i].tipo + "</button>"
+                    buttons += "<button type='button' class='btn btn-default btn-xs' style='margin:2px;'>" + result[i].tipo + "</button>"
                 }
 
                 $("#btns-filtro").append(buttons);
             } else {
-                $("#btns-filtro").hide();
+
+                $("#filtro-ass").hide();
             }
 
         },
@@ -77,17 +80,20 @@ $(document).ready(function () {
 
 });
 
+
 $(document).on('click', 'button', function () {
     $(this).toggleClass("active");
-    $(".link_assistenza").hide();
+//    $(".link_assistenza").hide();
+    $(".link_assistenza").addClass("invisible");
     var n = $('.active').length;
+    
     if (n > 0) {
         $(".active").each(function () {
             var tipo = $(this).html();
             tipo = tipo.replace(/\s+/g, '');
-            $("." + tipo).show();
+            $("." + tipo).removeClass("invisible");
         });
     } else {
-        $(".link_assistenza").show();
+    $(".link_assistenza").removeClass("invisible");
     }
 });

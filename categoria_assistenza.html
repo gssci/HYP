@@ -18,7 +18,7 @@
     <script src="js/script.js"></script>
     <script src="js/categoria_assistenza.js"></script>
     <title></title>
-    
+
 </head>
 
 <body>
@@ -30,14 +30,29 @@
             <div class="panel-heading">
 
                 <h3 id="categoria"></h3>
-                <div class="row" id="btns-filtro" style="margin-left:3px; margin-right:3px">
-                    Filtra per tipo:
-                </div>
 
             </div>
-            <div class="panel-body" id="lista-assistenza"></div>
+            <div class="panel-body no-padding">
+                <div class="row collapse in" id="filtro-ass">
+
+
+                    <div class="table-responsive">
+                        <table id="table-filtri">
+                            <tr>
+                                <td>
+                                    <h4><span class="label label-success">Tipo:</span></h4></td>
+                                <td id="btns-filtro" style="padding-top:8px;">
+                                    
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="lista-assistenza" style="margin-top:10px;"></div>
+            </div>
         </div>
-<a href="#" class="scrollToTop"><h1 class="glyphicon glyphicon-chevron-up"></h1></a>
+        <a href="#" class="scrollToTop"><h1 class="glyphicon glyphicon-chevron-up"></h1></a>
     </div>
 
 </body>

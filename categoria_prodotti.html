@@ -30,7 +30,7 @@
             <div class="panel-heading">
                 <div class="row row-inner">
                     <h3 id="categoria"></h3>
-                    <button id="toogleFiltro" class="btn btn-sm btn-info active" data-toggle="collapse" data-target="#filtro" style="float:right;">Nascondi Filtri</button>
+                    <button id="toogleFiltro" class="btn btn-sm btn-primary active" data-toggle="collapse" data-target="#filtro" style="float:right;">Nascondi Filtri</button>
                 </div>
             </div>
 
@@ -40,21 +40,21 @@
                         <table id="table-filtri">
                             <tr>
                                 <td>
-                                    <h4><span class="label label-info">Mostra solo:</span></h4> </td>
-                                <td>
+                                    <h4><span class="label label-primary">Mostra solo:</span></h4> </td>
+                                <td  style="padding-top:8x;">
                                     <button class="btn btn-xs btn-default btn-filtro" id="in_promozione" data-tipo="mostra_solo" value="in_promozione=1">In Promozione</button>
                                 </td>
                             </tr>
                             <tr>
-                                <td><h4><span class="label label-info">Prezzo:</span></h4></td>
-                                <td><button class="btn btn-xs btn-default btn-filtro" data-tipo="prezzo" value="prezzo < '150.00'">&lt;150€</button>
+                                <td><h4><span class="label label-primary">Prezzo:</span></h4></td>
+                                <td  style="padding-top:8px;"><button class="btn btn-xs btn-default btn-filtro" data-tipo="prezzo" value="prezzo < '150.00'">&lt;150€</button>
                                 <button class="btn btn-xs btn-default btn-filtro" data-tipo="prezzo" value="prezzo >= '150.00' AND prezzo < '300.00'">150€-300€</button>
                                 <button class="btn btn-xs btn-default btn-filtro" data-tipo="prezzo" value="prezzo >= '300.00' AND prezzo < '450.00'">300€-450€</button>
                                 <button class="btn btn-xs btn-default btn-filtro" data-tipo="prezzo" value="prezzo > '450.00'">&gt;450€</button></td>
                             </tr>
                             <tr>
-                                <td><h4><span class="label label-info">Produttore:</span></h4></td>
-                                <td id="produttori"></td>
+                                <td><h4><span class="label label-primary">Produttore:</span></h4></td>
+                                <td id="produttori" style="padding-top:12px;"></td>
                             </tr>
                         </table>
                     </div>
