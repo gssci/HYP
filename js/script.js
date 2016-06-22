@@ -54,36 +54,50 @@
                 return false;
             });
 
-            $(document).on('click', '.linkProdotto', function () {
+            $(document).on('click', '.linkProdotto', function (event) {
+                event.preventDefault(); //avoid navigating to page before this stuff is put into the localStorage
                 localStorage.setItem("cat_prodotto", $(this).attr('data-categoria'));
                 localStorage.setItem("id_prodotto", $(this).attr('id'));
+                window.location.href = $(this).attr('href');
             });
 
-            $(document).on('click', '.linkProdotto', function () {
+            $(document).on('click', '.linkProdotto', function (event) {
+                event.preventDefault();
                 localStorage.setItem("cat_prodotto", $(this).attr('data-categoria'));
                 localStorage.setItem("id_prodotto", $(this).attr('id'));
+                window.location.href = $(this).attr('href');
             });
 
-            $(document).on('click', '.linkCatProdotto', function () {
+            $(document).on('click', '.linkCatProdotto', function (event) {
+                event.preventDefault();
                 localStorage.setItem("cat_prodotto", $(this).attr('id'));
+                window.location.href = $(this).attr('href');
             });
 
-            $(document).on('click', '.linkSL', function () {
+            $(document).on('click', '.linkSL', function (event) {
+                event.preventDefault();
                 localStorage.setItem("cat_SL", $(this).attr('data-categoria'));
                 localStorage.setItem("id_SL", $(this).attr('id'));
+                window.location.href = $(this).attr('href');
             });
 
-            $(document).on('click', '.linkCatSL', function () {
+            $(document).on('click', '.linkCatSL', function (event) {
+                event.preventDefault();
                 localStorage.setItem("cat_SL", $(this).attr('id'));
+                window.location.href = $(this).attr('href');
             });
 
-            $(document).on('click', '.linkAssistenza', function () {
+            $(document).on('click', '.linkAssistenza', function (event) {
+                event.preventDefault();
                 localStorage.setItem("cat_assistenza", $(this).attr('data-categoria'));
                 localStorage.setItem("id_assistenza", $(this).attr('id'));
+                window.location.href = $(this).attr('href');
             });
 
-            $(document).on('click', '.linkCatAssistenza', function () {
+            $(document).on('click', '.linkCatAssistenza', function (event) {
+                event.preventDefault();
                 localStorage.setItem("cat_assistenza", $(this).attr('id'));
+                window.location.href = $(this).attr('href');
             });
 
             $(document).on('click', '.mytoggle', function () {
