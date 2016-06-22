@@ -35,7 +35,7 @@ $(document).ready(function () {
             var el = "";
             var buttons = "";
             for (var i = 0; i < ass.length; i++) {
-                el += "<div class='col-sm-4'><a class='linkAssistenza link_assistenza " + ass[i].tipo.replace(/\s+/g, '') + "' href='pagina_assistenza.html' id='" + ass[i].id + "' data-categoria='" + ass[i].id_categoria + "'><div class='myWell'><p class='evidenza'>" + ass[i].nome + "</p></div></a></div>";
+                el += "<a class='linkAssistenza link_assistenza " + ass[i].tipo.replace(/\s+/g, '') + "' href='pagina_assistenza.html' id='" + ass[i].id + "' data-categoria='" + ass[i].id_categoria + "'><div class='myWell myWell2'><p class='evidenza'>" + ass[i].nome + "</p></div></a>";
             }
 
             $("#lista-assistenza").append(el);

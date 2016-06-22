@@ -430,7 +430,7 @@ h3 {
         font-size: 110%;
     }
     #table-filtri h4{
-    font-size: 120%;
+    font-size: 125%;
 }
 }
 
@@ -450,10 +450,14 @@ h3 {
           box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
 }
 
+.myWell2 {
+  padding-top: 12px;
+  padding-bottom: 4px;
+  margin-bottom: 15px;
+}
 .myWell:hover {
   background-color: #dfdfdf;
 }
-
 .box-descrizione{
     font-size: 1.1em;
 }
@@ -516,6 +520,8 @@ h3 {
 }
 .table-responsive{
     border: none;
+    padding: 0;
+    margin: 0;
 }
 .scrollToTop:hover{
 	text-decoration:none;
