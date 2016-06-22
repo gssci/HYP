@@ -1,5 +1,6 @@
 $(document).ready(function () {
-    var id = localStorage.getItem("cat_assistenza");
+    // var id = localStorage.getItem("cat_assistenza"); unused to make sure the id is taken in each (Asynchronus) call
+    
     $.ajax({
         method: "POST",
         crossDomain: true,
@@ -10,7 +11,6 @@ $(document).ready(function () {
             where: "id='" + localStorage.getItem("cat_assistenza") + "'"
         },
         success: function (response) {
-            console.log(JSON.parse(response));
             var result = JSON.parse(response);
             $("#categoria").append(result[0].nome);
             $("title").html(result[0].nome);
@@ -30,7 +30,6 @@ $(document).ready(function () {
             where: "id_categoria='" + localStorage.getItem("cat_assistenza") + "'"
         },
         success: function (response) {
-            console.log(JSON.parse(response));
             var ass = JSON.parse(response);
             var el = "";
             var buttons = "";
@@ -57,7 +56,6 @@ $(document).ready(function () {
             where: "id_categoria='" + localStorage.getItem("cat_assistenza") + "'"
         },
         success: function (response) {
-            console.log(JSON.parse(response));
             var result = JSON.parse(response);
             var buttons = "";
             if (result.length > 1) {

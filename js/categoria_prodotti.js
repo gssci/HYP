@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    var id = localStorage.getItem("cat_prodotto");
+    // var id = localStorage.getItem("cat_prodotto");
     var queryCondition = "";
     
     $.ajax({
@@ -12,7 +12,6 @@ $(document).ready(function () {
             where: "id='" + localStorage.getItem("cat_prodotto") + "'"
         },
         success: function (response) {
-            console.log(JSON.parse(response));
             var result = JSON.parse(response);
             $("#categoria").append(result[0].nome);
             $("title").html(result[0].nome);
@@ -32,7 +31,6 @@ $(document).ready(function () {
             where: "categoria='" + localStorage.getItem("cat_prodotto") + "'"
         },
         success: function (response) {
-            console.log(JSON.parse(response));
             var prodotti = JSON.parse(response);
             var el = "";
             for (var i = 0; i < prodotti.length; i++) {
@@ -56,7 +54,6 @@ $(document).ready(function () {
             where: "categoria='" + localStorage.getItem("cat_prodotto") + "'"
         },
         success: function (response) {
-            console.log(JSON.parse(response));
             var result = JSON.parse(response);
             var checkboxes = "";
             if (result.length > 1) {
@@ -178,7 +175,7 @@ $(document).ready(function () {
             data: {
                 select: "produttore, nome, id, categoria, url_immagine, prezzo",
                 table: "prodotti",
-                where: "categoria='" + id + "'" + " " + queryCondition
+                where: "categoria='" + localStorage.getItem("cat_prodotto") + "'" + " " + queryCondition
             },
             success: function (response) {
                 try {

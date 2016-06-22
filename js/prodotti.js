@@ -10,7 +10,6 @@ $(document).ready(function () {
             where: "1"
         },
         success: function (response) {
-            console.log(JSON.parse(response));
             var cat = JSON.parse(response);
             var el = "";
             for (var i = 0; i < cat.length; i++) {
@@ -34,7 +33,6 @@ $(document).ready(function () {
             where: "in_promozione = 1"
         },
         success: function (response) {
-            console.log(JSON.parse(response));
             var promo = JSON.parse(response);
             var el = "";
             for (var i = 0; i < promo.length; i++) {

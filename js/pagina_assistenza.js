@@ -1,6 +1,7 @@
 $(document).ready(function () {
-    var id = localStorage.getItem("id_assistenza");
-    var categoria = localStorage.getItem("cat_assistenza");
+    //Since calls are asyncronous the parameters id and categoria are taken from the localStorage for each case 
+    // var categoria = localStorage.getItem("cat_assistenza");
+    // var id = localStorage.getItem("id_assistenza");  AKA these variables become unused, same goes for products and smartlife
 
     $("#toggle_prodotti").hide();
 
@@ -14,7 +15,6 @@ $(document).ready(function () {
             where: "id='" + localStorage.getItem("id_assistenza") + "'"
         },
         success: function (response) {
-            console.log(JSON.parse(response));
             var result = JSON.parse(response);
             var nome = result[0].nome;
             $("title").html(nome);
@@ -39,7 +39,6 @@ $(document).ready(function () {
             where: "id='" + localStorage.getItem("cat_assistenza") + "'"
         },
         success: function (response) {
-            console.log(JSON.parse(response));
             var result = JSON.parse(response);
             var nome = result[0].nome;
             $(".linkCatAssistenza").prepend(nome);
@@ -60,7 +59,6 @@ $(document).ready(function () {
             where: "assistenza.id = faq.id_assistenza AND id_assistenza='" + localStorage.getItem("id_assistenza") + "'"
         },
         success: function (response) {
-            console.log(JSON.parse(response));
             var result = JSON.parse(response);
             var faq = "";
 
@@ -88,7 +86,6 @@ $(document).ready(function () {
             where: "id_assistenza='" + localStorage.getItem("id_assistenza") + "'"
         },
         success: function (response) {
-            console.log(JSON.parse(response));
             var id_prodotti = JSON.parse(response);
             var prodotti = "";
             if (id_prodotti.length > 0) {
@@ -104,7 +101,6 @@ $(document).ready(function () {
                             where: "id='" + id_prodotti[i].id_prodotto + "'"
                         },
                         success: function (response) {
-                            console.log(JSON.parse(response));
                             var result = JSON.parse(response);
                             var el = "";
                             for (var j = 0; j < result.length; j++) {

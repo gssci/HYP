@@ -10,7 +10,6 @@ $(document).ready(function () {
             where: "1"
         },
         success: function (response) {
-            console.log(JSON.parse(response));
             var cat = JSON.parse(response);
             var icone = "";
             var banners = "";

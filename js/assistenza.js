@@ -9,7 +9,6 @@ $(document).ready(function () {
             where: "1"
         },
         success: function (response) {
-            console.log(JSON.parse(response));
             var cat = JSON.parse(response);
             var icone = "";
 
@@ -34,7 +33,6 @@ $(document).ready(function () {
             where: "in_evidenza = 1"
         },
         success: function (response) {
-            console.log(JSON.parse(response));
             var ev = JSON.parse(response);
             var box_evidenza = "";
             for (var i = 0; i < ev.length; i++) {

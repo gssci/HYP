@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    var id = localStorage.getItem("cat_SL");
+    //var id = localStorage.getItem("cat_SL"); unused to make sure the id is taken in each (Asynchronus) call
 
     $.ajax({
         method: "POST",
@@ -11,7 +11,6 @@ $(document).ready(function () {
             where: "id='" + localStorage.getItem("cat_SL") + "'"
         },
         success: function (response) {
-            console.log(JSON.parse(response));
             var result = JSON.parse(response);
             $("#categoria").append(result[0].nome);
             $("title").html(result[0].nome);
@@ -32,7 +31,6 @@ $(document).ready(function () {
             where: "id_categoria='" + localStorage.getItem("cat_SL") + "'"
         },
         success: function (response) {
-            console.log(JSON.parse(response));
             var result = JSON.parse(response);
             var el = "";
             for (var i = 0; i < result.length; i++) {

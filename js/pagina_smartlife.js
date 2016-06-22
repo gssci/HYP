@@ -1,6 +1,8 @@
 $(document).ready(function () {
-    var id = localStorage.getItem("id_SL");
-    var categoria = localStorage.getItem("cat_SL");
+    //Since calls are asyncronous the parameters id and categoria are taken from the localStorage for each case 
+    // var categoria = localStorage.getItem("cat_assistenza");
+    // var id = localStorage.getItem("id_assistenza");  AKA these variables become unused, same goes for products and smartlife
+
     $.ajax({
         method: "POST",
         crossDomain: true,
@@ -11,7 +13,6 @@ $(document).ready(function () {
             where: "id='" + localStorage.getItem("id_SL") + "'"
         },
         success: function (response) {
-            console.log(JSON.parse(response));
             var result = JSON.parse(response);
             var nome = result[0].nome;
             $("title").html(nome);
@@ -37,7 +38,6 @@ $(document).ready(function () {
             where: "id='" + localStorage.getItem("cat_SL") + "'"
         },
         success: function (response) {
-            console.log(JSON.parse(response));
             var result = JSON.parse(response);
             var nome = result[0].nome;
             $(".linkCatSL").prepend(nome);
@@ -56,10 +56,9 @@ $(document).ready(function () {
         data: {
             select: "id_prodotto",
             table: "prodotti_smartlife",
-            where: "id_smartlife='" + id + "'"
+            where: "id_smartlife='" + localStorage.getItem("id_SL") + "'"
         },
         success: function (response) {
-            console.log(JSON.parse(response));
             var id_prodotti = JSON.parse(response);
             var prodotti = "";
             for (var i = 0; i < id_prodotti.length; i++) {
@@ -73,7 +72,6 @@ $(document).ready(function () {
                         where: "id='" + id_prodotti[i].id_prodotto + "'"
                     },
                     success: function (response) {
-                        console.log(JSON.parse(response));
                         var result = JSON.parse(response);
                         var el = "";
                         for (var j = 0; j < result.length; j++) {

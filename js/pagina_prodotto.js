@@ -1,7 +1,8 @@
 $(document).ready(function () {
-    var id = localStorage.getItem("id_prodotto");
-    var categoria = localStorage.getItem("cat_prodotto");
-
+    //Since calls are asyncronous the parameters id and categoria are taken from the localStorage for each case 
+    // var categoria = localStorage.getItem("cat_prodotto");
+    // var id = localStorage.getItem("id_prodotto");  AKA these variables become unused, same goes for assistance and smartlife
+    
     $.ajax({
         method: "POST",
         crossDomain: true,
@@ -172,7 +173,7 @@ $(document).ready(function () {
 
 
     //Multiple images only available for smartphones
-    if (categoria == 'smartphone' || categoria == 'outlet') {
+    if (localStorage.getItem("cat_prodotto") == 'smartphone' || localStorage.getItem("cat_prodotto") == 'outlet') {
         $.ajax({
             method: "POST",
             crossDomain: true,
