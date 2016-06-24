@@ -36,7 +36,7 @@ $(document).ready(function () {
             var promo = JSON.parse(response);
             var el = "";
             for (var i = 0; i < promo.length; i++) {
-                el += "<div class='col-sm-4'><div class='well well-sm'><h3>" + promo[i].nome + "</h3><br><a class='linkProdotto' href='pagina_prodotto.html' id='"+promo[i].id+"' data-categoria='"+promo[i].categoria+"'><img src='" + promo[i].url_immagine + "' class='img-responsive img-thumbnail' style='width:60%' alt='" + promo[i].nome + "'></a><br><h4>a soli €" + promo[i].prezzo + "</h4><a href='pagina_prodotto.html' id='"+promo[i].id+"' data-categoria='"+promo[i].categoria+"' class='btn btn-info linkProdotto' role='button'>Dettagli</a></div></div>";
+                el += "<div class='col-sm-4'><div class='well well-sm'><h3>" + promo[i].nome + "</h3><br><a class='linkProdotto' href='pagina_prodotto.html' id='"+promo[i].id+"' data-categoria='"+promo[i].categoria+"'><img src='" + promo[i].url_immagine + "' class='img-responsive img-thumbnail' style='width:60%' alt='" + promo[i].nome + "'></a><br><h4>a soli " + promo[i].prezzo + "€</h4><a href='pagina_prodotto.html' id='"+promo[i].id+"' data-categoria='"+promo[i].categoria+"' class='btn btn-info linkProdotto' role='button'>Dettagli</a></div></div>";
             }
 
             $(".promozioni").html(el);
