@@ -3,7 +3,6 @@
         <plugin name="cordova-plugin-whitelist" />
         <access origin="*" />
         <allow-intent href="*" />
-        <!-- versionCode is optional and Android only -->
 
         <name>TIM.it</name>
 

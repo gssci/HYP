@@ -3,7 +3,9 @@
                 $.support.cors = true;
                 $.mobile.allowCrossDomainPages = true;
             });
-
+            
+            $('[data-toggle="tooltip"]').tooltip(); 
+            
             $.ajax({
                 url: "includes/navbar.html",
                 success: function (result) {

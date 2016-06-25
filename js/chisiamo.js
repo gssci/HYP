@@ -1,13 +1,7 @@
 $(document).ready(function () {
     
-    $('a[href^="#"]').on('click', function (e) {
-        e.preventDefault();
-
-        var target = this.hash;
-        var $target = $(target);
-
-        $('html, body').stop().animate({
-            'scrollTop': $target.offset().top - 105
-        }, 900, 'swing');
-    });
+   $(document).on('click','.sub-nav-link', function (){
+       $(".sub-nav-link").removeClass("current");
+       $(this).addClass("current");
+   })
 });
