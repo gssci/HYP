@@ -15,7 +15,7 @@ design w.r.t. the real TIM website (it contained products not services!)
 
 * All the "SPECIALS" (optional) forms were implemented, altough they do nothing in practice.
 
-**Improvements from Design Project:**
+### Improvements from Design Project
 We addressed both issues that were noted in the first evaluation (Link "torna" inconsistente, orientation info minimali) this way: 
   * We kept the highlight in the navbar of the topic of the current page
   * We removed the go-back link and substitued it with buttons that resemble "breadcrumbs"
