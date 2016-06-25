@@ -34,7 +34,11 @@
 h3{
     margin: 0;
 }
-
+.img-testimonial{
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 .quote{
     font-weight: 300;
     font-size: 1.5em;
