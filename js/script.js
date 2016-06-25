@@ -4,7 +4,7 @@
                 $.mobile.allowCrossDomainPages = true;
             });
             
-            $('[data-toggle="tooltip"]').tooltip(); 
+   
             
             $.ajax({
                 url: "includes/navbar.html",
