@@ -17,6 +17,6 @@ design w.r.t. the real TIM website (it contained products not services!)
 
 ### Improvements from Design Project
 We addressed both issues that were noted in the first evaluation (Link "torna" inconsistente, orientation info minimali) this way: 
-  * We kept the highlight in the navbar of the topic of the current page
-  * We removed the go-back link and substitued it with buttons that resemble "breadcrumbs"
+  * We kept the highlight in the navbar of the name of topic of the current page, like in the mockup
+  * We removed the go-back link and substituted it with buttons that resemble "breadcrumbs"
   * and also we **color coded** our webpages by a Multiple Topic criterion (Product pages are **blue**, SL **orange** and Assistance **green**) so that it's very easy for the user to get a sense of change of topic when navigatin through the website.
