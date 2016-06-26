@@ -13,7 +13,7 @@ design w.r.t. the real TIM website (it contained products not services!)
 
 * To make the website more **usable** (especially in the mobile) we included a button that sends the user back to the top of the page after it scrolls down a certain amount. 
 
-* All the "SPECIALS" (optional) forms were implemented, altough they do nothing in practice.
+* All the "SPECIALS" (optional) forms were implemented, altough they do nothing in practice. #lessismore
 
 ### Improvements from Design Project
 We addressed both issues that were noted in the first evaluation (Link "torna" inconsistente, orientation info minimali) this way: 
