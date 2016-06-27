@@ -1,9 +1,9 @@
 # Hypermedia Applications
 gruppo: Lucia Polidori, Gerlando Savio Scibetta
 
-* We built ourselves the template for our website using the Bootstrap framework, and applying a few customizations to it.
+* We built ourselves the template for our website using the Bootstrap framework, and applying customizations to it.
 
-* The **PhoneGap** build obtained from https://build.phonegap.com/ is **fully functioning**, please take the time to try it out.
+* The **PhoneGap** build obtained from https://build.phonegap.com/ is **fully functioning**, please take the time to try it out, as a lot of effort was put into providing a good user-experience on smartphones.
 
 * All the links included in the website are working, and time was taken to fill the database to an adequate amount so as to give a realistic feeling of navigating through the website. 
 An exception to this is the link for the category of *Salute and Benessere* under *Smartlife*, the reason is that it contained a serious inconsistency with our 
