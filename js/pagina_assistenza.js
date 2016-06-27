@@ -10,7 +10,7 @@ $(document).ready(function () {
         crossDomain: true,
         url: "http://polidoriscibetta.altervista.org/php/query.php",
         data: {
-            select: "*",
+            select: "nome, id_categoria, descrizione",
             table: "assistenza",
             where: "id='" + localStorage.getItem("id_assistenza") + "'"
         },

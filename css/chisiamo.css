@@ -36,6 +36,7 @@ h3{
 }
 .img-testimonial{
     padding-bottom: 10px;
+    border-radius: 50px;
 }
 .quote{
     font-weight: 300;
@@ -77,7 +78,7 @@ h3{
     text-shadow: 1px 1px 6px rgba(0, 0, 0, 1);
     font-size: 1.7em;
     line-height: 1.2em;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .testimonial{
@@ -99,4 +100,15 @@ h3{
 .panel-primary{
     
     margin-top:20px;
+}
+
+@media screen and (max-width: 992px) {
+    .descrizione, .descrizione-white{
+        font-size: 1.3em;
+    }
+}
+@media screen and (max-width: 768px) {
+   .descrizione, .descrizione-white{
+        font-size: 1.3em;
+    }
 }

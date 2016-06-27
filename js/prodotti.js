@@ -13,7 +13,7 @@ $(document).ready(function () {
             var cat = JSON.parse(response);
             var el = "";
             for (var i = 0; i < cat.length; i++) {
-                el += "<div class='col-xs-4 col-sm-4 col-sm-2'><a class='linkCatProdotto' id='"+cat[i].id+"' href='categoria_prodotti.html'><img src='" + cat[i].url_icona + "' alt='" + cat[i].nome + "' /><br>" + cat[i].nome + "</a></div>";
+                el += "<td><a class='linkCatProdotto' id='"+cat[i].id+"' href='categoria_prodotti.html'><center><img src='" + cat[i].url_icona + "' alt='" + cat[i].nome + "' class='img-responsive' /><br>" + cat[i].nome + "</center></a></td>";
             }
 
             $("#categorie").html(el);

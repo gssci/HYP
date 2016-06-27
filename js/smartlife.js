@@ -17,12 +17,12 @@ $(document).ready(function () {
                 
                 //we disable "Salute e benessere" manually, this is not going to be pretty
                 if(cat[i].id == "salute"){
-                    icone += "<div class='col-xs-4 col-sm-2'><a href='' data-toggle='tooltip' title='Questa sezione sul sito della TIM contiene una  inconsistenza con il nostro design (contiene prodotti). Abbiamo quindi deciso di non implementarla' data-placement='bottom'><img style='opacity: 0.4;' src='" + cat[i].url_icona + "' alt='" + cat[i].nome + "' /></a><br>" + cat[i].nome + "</div>";
+                    icone += "<td><center><img data-toggle='tooltip' title='Sul sito della TIM i contenuti di questa categoria sono inconsistenti con il nostro design (contiene solo prodotti). Abbiamo quindi deciso di non implementarla' data-placement='bottom' class='img-responsive' style='opacity: 0.4;' src='" + cat[i].url_icona + "' alt='" + cat[i].nome + "' /><br>" + cat[i].nome + "</center></td>";
                     
                     banners += "<div id='banner_"+i+"' class='banner-cropped img-banner cn'><div class='inner col-xs-10 col-sm-4'><h2 class='white-title'>"+cat[i].nome+"</h2><p>"+cat[i].sottotitolo+"</p></div></div>";
                 }
                 else{
-                    icone += "<div class='col-xs-4 col-sm-2'><a href='categoria_smartlife.html' class='linkCatSL' id='" + cat[i].id + "'><img src='" + cat[i].url_icona + "' alt='" + cat[i].nome + "' /><br>" + cat[i].nome + "</a></div>";
+                    icone += "<td><center><a href='categoria_smartlife.html' class='linkCatSL' id='" + cat[i].id + "'><img src='" + cat[i].url_icona + "' alt='" + cat[i].nome + "' class='img-responsive'/><br>" + cat[i].nome + "</a></center></td>";
                 
                 banners += "<div id='banner_"+i+"' class='banner-cropped img-banner cn'><div class='inner col-xs-10 col-sm-4'><h2 class='white-title'>"+cat[i].nome+"</h2><p>"+cat[i].sottotitolo+"</p><a href='categoria_smartlife.html' id='" + cat[i].id + "' class='btn btn-warning linkCatSL' role='button'>Scopri</a></div></div>";
                 }
@@ -44,7 +44,9 @@ $(document).ready(function () {
     });
 
     
-    
+    $(document).on('mouseenter', '#categorie', function () {
+                $('[data-toggle="tooltip"]').tooltip();
+            });
 });
 
 

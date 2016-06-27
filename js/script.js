@@ -3,9 +3,9 @@
                 $.support.cors = true;
                 $.mobile.allowCrossDomainPages = true;
             });
-            
-   
-            
+
+
+
             $.ajax({
                 url: "includes/navbar.html",
                 success: function (result) {
@@ -48,8 +48,7 @@
                 }
             });
 
-            //Click event to scroll to top
-            $('.scrollToTop').click(function () {
+            $(document).on('click', '.scrollToTop', function () {
                 $('html, body').animate({
                     scrollTop: 0
                 }, 800);

@@ -2,54 +2,49 @@ body {
     background-color: #eceff7;
 }
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
 }
-.highlight{
+.highlight {
     color: #fe000d !important;
     text-shadow: 2px 1px 3px rgba(0, 0, 0, 0.7);
 }
 footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-  padding: 5px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    padding: 5px;
 }
 .container {
     margin-top: 55px;
 }
-.no-padding{
+.no-padding {
     padding-top: 0;
 }
-.icone{
-    padding: 10px;
-}
-#filtro{
-    background-color:#6e9fc9;
-    
+#filtro {
+    background-color: #6e9fc9;
     padding-bottom: 8px;
     padding-top: 4px;
 }
-#filtro-ass{
-    background-color:#dff0d8;
-    
+#filtro-ass {
+    background-color: #dff0d8;
     padding-bottom: 8px;
     padding-top: 4px;
 }
-.filtro-header{
+.filtro-header {
     margin: 0;
 }
-.row-inner{
+.row-inner {
     margin-left: 3px;
     margin-right: 3px;
 }
-.row-padded{
+.row-padded {
     margin-bottom: 5px;
 }
 .row-inner > h4 {
@@ -153,9 +148,7 @@ footer {
     height: 400px;
     background-position: center center;
     background-repeat: no-repeat;
-   
 }
-
 .left-cropped {
     width: 100%;
     height: 200px;
@@ -163,7 +156,7 @@ footer {
     background-size: 200%;
     background-repeat: no-repeat;
 }
-#sl-body{
+#sl-body {
     background-position: center top;
     background-repeat: no-repeat;
     background-size: 100%, cover;
@@ -192,10 +185,10 @@ footer {
     font-size: 2em;
     line-height: 1.2em;
 }
-.invisible{
+.invisible {
     visibility: hidden;
     display: none;
-     width: 0;
+    width: 0;
     height: 0;
     opacity: 0;
     margin: 0;
@@ -204,7 +197,7 @@ footer {
 .sub_item-sl {
     text-align: center;
     margin-top: 75px;
-    margin-bottom:  75px;
+    margin-bottom: 75px;
     display: block;
     color: white;
     padding: 0.5em;
@@ -213,7 +206,6 @@ footer {
     line-height: 1.2em;
     background-color: rgba(218, 125, 47, 0.6);
 }
-
 .sub_item-cs {
     background-color: rgba(255, 255, 255, 0.6);
     text-align: center;
@@ -222,29 +214,28 @@ footer {
     font-weight: 300;
     margin: 3%;
 }
-.divisor{
+.divisor {
     min-height: 25px;
     background-color: white;
     width: 100%;
     margin: 0;
 }
 .cn {
-  display: flex;
-  justify-content: flex-end;
+    display: flex;
+    justify-content: flex-end;
 }
-
 .inner {
-  align-self: center;
-  text-align: right;
-  padding: 3px;
-  color: white;
+    align-self: center;
+    text-align: right;
+    padding: 3px;
+    color: white;
 }
-.collapse-icon{
-    float:right;
-    margin:2px;
+.collapse-icon {
+    float: right;
+    margin: 2px;
 }
-.white-title{
-    background-color:rgba(255, 255, 255, 0.3);
+.white-title {
+    background-color: rgba(255, 255, 255, 0.3);
     min-height: 20px;
     color: white;
     width: 100%;
@@ -298,10 +289,16 @@ footer {
 .panel-heading > h4 {
     margin: 0;
 }
-
 .head-button {
+    margin-left: auto;
     float: right;
     display: inline-block;
+}
+.row-name {
+    margin-left: 3px;
+    margin-right: 3px;
+    display: flex;
+    align-items: center;
 }
 .container > .panel {
     margin-top: 5px;
@@ -348,32 +345,28 @@ h3 {
     background: linear-gradient(#05a9da, #4ea8c3);
     /* Standard syntax */
 }
-
-.mytoggle-orange{
+.mytoggle-orange {
     background: #f0ae51;
     background: -webkit-linear-gradient(#f0ae51, #e6931e);
     background: -o-linear-gradient(#f0ae51, #e6931e);
     background: -moz-linear-gradient(#f0ae51, #e6931e);
     background: linear-gradient(#f0ae51, #e6931e);
 }
-
-.mytoggle-orange:hover{
+.mytoggle-orange:hover {
     background: #f89c19;
     background: -webkit-linear-gradient(#f89c19, #e6931e);
     background: -o-linear-gradient(#f89c19, #e6931e);
     background: -moz-linear-gradient(#f89c19, #e6931e);
     background: linear-gradient(#f89c19, #e6931e);
 }
-
-.mytoggle-green{
+.mytoggle-green {
     background: #80b680;
     background: -webkit-linear-gradient(#80b680, #5cb85c);
     background: -o-linear-gradient(#80b680, #5cb85c);
     background: -moz-linear-gradient(#80b680, #5cb85c);
     background: linear-gradient(#80b680, #5cb85c);
 }
-
-.mytoggle-green:hover{
+.mytoggle-green:hover {
     background: #2bb52b;
     background: -webkit-linear-gradient(#2bb52b, #5cb85c);
     background: -o-linear-gradient(#2bb52b, #5cb85c);
@@ -401,8 +394,10 @@ h3 {
     h3 {
         font-size: 18px;
     }
-    sub_item{
-        font-size: 1.5em;
+    .sub_item-sl {
+        font-size: 1.3em;
+        margin-top: 25px;
+        margin-bottom: 25px;
     }
 }
 @media screen and (max-width: 768px) {
@@ -412,7 +407,10 @@ h3 {
     div,
     span,
     h4 {
-        font-size: 98%;
+        font-size: 100%;
+    }
+    .icone{
+        font-size: 85%;
     }
     h1 {
         font-size: 20px;
@@ -423,52 +421,50 @@ h3 {
     h3 {
         font-size: 16px;
     }
-    sub_item{
-        font-size: 1.5em;
-    }
     .row-inner > h4 {
         font-size: 110%;
     }
-    #table-filtri h4{
-    font-size: 125%;
-}
+    #table-filtri h4 {
+        font-size: 125%;
+    }
+    .sub_item-sl {
+        font-size: 1.3em;
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
 }
 
-.evidenza{
+.evidenza {
     font-size: 1.2em;
     font-weight: 300;
     text-align: center;
 }
 .myWell {
-  padding-top: 20px;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-  background-color: #f5f5f5;
-  border: 1px solid #e3e3e3;
-  border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
-          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+    padding-top: 20px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
 }
-
 .myWell2 {
-  padding-top: 12px;
-  padding-bottom: 4px;
-  margin-bottom: 15px;
+    padding-top: 12px;
+    padding-bottom: 4px;
+    margin-bottom: 15px;
 }
 .myWell:hover {
-  background-color: #dfdfdf;
+    background-color: #dfdfdf;
 }
-.box-descrizione{
+.box-descrizione {
     font-size: 1.1em;
 }
-
-.grid1{
-    text-align: center ;
+.grid1 {
+    text-align: center;
     color: black;
     margin-bottom: 10px;
-    
 }
-
 .well_1 {
     min-height: 20px;
     padding: 19px;
@@ -480,80 +476,78 @@ h3 {
     background-color: #f5f5f5;
     border: 1px solid #e3e3e3;
     border-radius: 10px;
-
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
 }
-
-#sl-panel{
+#sl-panel {
     opacity: 0.6;
     filter: alpha(opacity=60);
 }
-
-.scrollToTop{
-	padding:5px; 
-	text-align:center; 
-	background: rgba(0,54,114,0.5);
-	font-weight: bold;
-	color: white;
-	text-decoration: none;
-	position:fixed;
-	bottom:20px;
-	right:20px;
-	display:none;
-    padding-top: 23px;
-    padding-bottom: 23px;
+.scrollToTop {
+    text-align: center;
+    background: rgba(0, 54, 114, 0.5);
+    color: white;
+    text-decoration: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    padding-top: 20px;
+    padding-bottom: 20px;
     padding-left: 20px;
     padding-right: 20px;
     border-radius: 10px;
+    z-index: 100;
 }
-.table-responsive{
+.table-responsive {
     border: none;
     padding: 0;
     margin: 0;
 }
-.scrollToTop:hover{
-	text-decoration:none;
+.scrollToTop:hover {
+    text-decoration: none;
 }
-.scrollToTop > h1{
+.scrollToTop > h1 {
     margin: 0;
+    padding: 0;
 }
-#table-filtri{
+#table-filtri {
     text-align: left;
     border: none;
     border-collapse: collapse;
     margin-left: 5px;
     margin-right: 5px;
 }
-#table-filtri td{
+#table-filtri td {
     padding: 5px;
     vertical-align: middle;
     border: none;
 }
-#table-filtri tr{
+#table-filtri tr {
     border: none;
 }
-#table-filtri h4{
+#table-filtri h4 {
     margin: 0;
 }
-
-.mytogglelink{
+#categorie td {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.mytogglelink {
     text-decoration: none !important;
 }
-
-.img-galleria{
+.img-galleria {
     opacity: 0.5;
     width: 50px;
     margin-right: 10px;
     margin-bottom: 25px;
 }
-
-.img-galleria:hover{
+.img-galleria:hover {
     opacity: 1;
 }
-
-.img-galleria-selected{
+.img-galleria-selected {
     opacity: 1;
 }
-.btn:focus,.btn:active {
-   outline: none !important;
+.btn:focus,
+.btn:active {
+    outline: none !important;
 }
