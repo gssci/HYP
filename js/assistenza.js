@@ -13,7 +13,7 @@ $(document).ready(function () {
             var icone = "";
 
             for (var i = 0; i < cat.length; i++) {
-                icone += "<td><a href='categoria_assistenza.html' class='linkCatAssistenza' id='" + cat[i].id + "'><center><img src='" + cat[i].url_icona + "' alt='" + cat[i].nome + "' class='img-responsive' /><br>" + cat[i].nome + "</center></a></td>";
+                icone += "<td><a href='categoria_assistenza.html' class='linkCatAssistenza' id='" + cat[i].id + "'><center><img src='" + cat[i].url_icona + "' alt='" + cat[i].nome + "' /><br>" + cat[i].nome + "</center></a></td>";
             }
 
             $("#categorie").html(icone);

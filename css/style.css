@@ -373,7 +373,12 @@ h3 {
     background: -moz-linear-gradient(#2bb52b, #5cb85c);
     background: linear-gradient(#2bb52b, #5cb85c);
 }
-
+#categorie td {
+    padding-left: 25px;
+    padding-right: 25px;
+    width: 100px;
+    height: 100px;
+}
 /* responsive text queries */
 
 @media screen and (max-width: 992px) {
@@ -399,6 +404,7 @@ h3 {
         margin-top: 25px;
         margin-bottom: 25px;
     }
+
 }
 @media screen and (max-width: 768px) {
     p,
@@ -432,6 +438,8 @@ h3 {
         margin-top: 25px;
         margin-bottom: 25px;
     }
+    
+
 }
 
 .evidenza {
@@ -528,10 +536,8 @@ h3 {
 #table-filtri h4 {
     margin: 0;
 }
-#categorie td {
-    padding-left: 25px;
-    padding-right: 25px;
-}
+
+
 .mytogglelink {
     text-decoration: none !important;
 }
